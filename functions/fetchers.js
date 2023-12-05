@@ -175,7 +175,7 @@ const helper = {
                     answer[i].websiteLink = sale.pool.ipfs ? sale.pool.ipfs.website : undefined
                     answer[i].submittedDescription = sale.pool.ipfs ? sale.pool.ipfs.description : undefined
                     answer[i].githubLink = sale.pool.ipfs ? sale.pool.ipfs.github : undefined
-                    answer[i].chain = helper.gempad.convertChainToId(answer[i].chain)
+                    answer[i].chain = Number(helper.gempad.convertChainToId(answer[i].chain))
                     answer[i].launchpad = 'gempad'
 
                     answer[i].baseSymbol = answer[i].baseTokenSymbol
@@ -204,3 +204,5 @@ const helper = {
         }
     }
 }
+
+helper.gempad.getNonClosed()
