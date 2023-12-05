@@ -202,7 +202,119 @@ const helper = {
                 console.log(e)
             }
         }
+    },
+    polkastarter: {
+        getUpcoming: async () => {
+            try {
+                let response = await fetch('https://polkastarter.com/v3/projects?status=upcoming&view=metrics')
+                let answer = await response.json()
+                let formatted = []
+                
+                for (let i = 0; i < answer.data.length; i++) {
+                    await new Promise(resolve => setTimeout(resolve, 1000))
+                    let response2 = await fetch(`https://polkastarter.com/v3/projects/${answer.data[i].slug}`)
+                    let answer2 = await response2.json()
+                    formatted.push({
+                        tokenName: answer2.data.name,
+                        tokenSymbol: answer2.data.symbol,
+                        websiteLink: answer2.data.website_url,
+                        twitterLink: answer2.data.twitter_handle !== "" ? `https://twitter.com/${answer2.data.twitter_handle}` : '',
+                        whitepaperLink: answer2.data.whitepaper_url,
+                        telegramLink: answer2.data.telegram_handle !== "" ? `https://t.me/${answer2.data.telegram_handle}` : '',
+                        submittedDescription: answer2.data.description
+                    })
+                }
+
+                return formatted
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    },
+    seedify: {
+        getUpcoming: async () => {
+            try {
+                let response = await fetch('https://api-igo.seedify.fund/api/pools/get_upcPool')
+                let answer = await response.json()
+                let formatted = []
+                
+                for (let i = 0; i < answer['upcPool'].length; i++) {
+                    if (answer['upcPool'][i].symbol !== "TEST") {
+                        formatted.push({
+                            tokenName: answer['upcPool'][i].title,
+                            tokenSymbol: answer['upcPool'][i].symbol,
+                            websiteLink: answer['upcPool'][i].browser_web_link,
+                            twitterLink: answer['upcPool'][i].twitter_link,
+                            whitepaperLink: answer['upcPool'][i].white_paper,
+                            telegramLink: answer['upcPool'][i].telegram_link,
+                            submittedDescription: answer['upcPool'][i].description
+                        })
+                    }
+                }
+
+                return formatted
+
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    },
+    daomaker: {
+        getUpcoming: async () => {
+            try {
+                let response = await fetch('https://api.daomaker.com/prepareHomePage')
+                let answer = await response.json()
+                let formatted = []
+                
+                for (let i = 0; i < answer.offerings.length; i++) {
+                    formatted.push({
+                        tokenName: answer.offerings[i].title,
+                        tokenSymbol: answer.offerings[i].token_ticker,
+                        websiteLink: answer.offerings[i].company[0].website_url,
+                        twitterLink: answer.offerings[i].company[0].twitter_url,
+                        telegramLink: answer.offerings[i].company[0].telegram_url,
+                        submittedDescription: answer.offerings[i].company[0].short_description,
+                        status: answer.offerings[i].ended ? 2 : 0
+                    })
+                }
+
+                console.log(formatted)
+                                
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    },
+    cryptorank: {
+        getUpcoming: async () => {
+            try {
+                let response = await fetch('https://api.cryptorank.io/v0/round/upcoming', {
+                    method: 'POST',
+                })
+                let answer = await response.json()
+                let formatted = []
+
+                for (let i = 0; i < answer.data.length; i++) {
+                    await new Promise(resolve => setTimeout(resolve, 2000))
+                    let response2 = await fetch(`https://api.cryptorank.io/v0/coins/${answer.data[i].key}?locale=en`)
+                    let answer2 = await response2.json()
+                    let formattedIco = {
+                        tokenName: answer2.data.name,
+                        tokenSymbol: answer2.data.symbol,
+                        websiteLink: answer2.data.links.find(item => item.type == "web")?.value,
+                        twitterLink: answer2.data.links.find(item => item.type == "twitter")?.value,
+                        whitepaperLink: answer2.data.links.find(item => item.type == "whitepaper")?.value,
+                        telegramLink: answer2.data.links.find(item => item.type == "telegram")?.value,
+                        submittedDescription: answer2.data.description,
+                        status: answer2.data.icoStatus // unify status attribute across all launch sources (pink, gem, this, etc.)
+                    }
+                    formatted.push(formattedIco)
+                }
+
+                return formatted
+            } catch (e) {
+                console.log(e)
+            }
+        }
     }
 }
-
-helper.gempad.getNonClosed()
