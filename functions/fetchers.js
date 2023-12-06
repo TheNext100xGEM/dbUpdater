@@ -1,6 +1,18 @@
 require('dotenv').config({ path: `.env.local`})
-
+// included audit report in pink and gem entries (not available for cryptorank)
+// coded status updaters for pink and gem
+// added github and gitbook links to cryptorank
+// added initial marketcap to cryptorank
+// added source attribute
 const helper = {
+    general: {
+        arrayToObject : (array, keyField) => {
+            return array.reduce((obj, item) => {
+                obj[item[keyField]] = item
+                return obj
+            }, {})
+        },
+    },
     pink: {
         banned: [ // sales I noticed that shouldn't be returned by the api but still are
             '0x0280D51A12e94f3Cbd02dd31a9c8e94060EB598B',
@@ -77,6 +89,7 @@ const helper = {
         formatSale: (a) => { // returns formatted version of sale
             try {
               let details = JSON.parse(a.pool.poolDetails)
+              let kycDetails = a.pool.kycDetails == "" ? undefined : JSON.parse(a.pool.kycDetails)
         
               let sale = {
                 presaleAddress: a.poolAddress,
@@ -85,6 +98,7 @@ const helper = {
                 baseSymbol: a.currency.symbol,
                 saleToken: a.token.address,
                 audit: a.pool.hasAudit,
+                auditLink: kycDetails?.b || undefined,
                 kyc: a.pool.hasKyc,
                 safu: a.pool.hasSafu,
                 softCap: a.pool.formattedSoftCap,
@@ -104,6 +118,7 @@ const helper = {
                 telegramMemberCount: a.pool.telegramMemberCount,
                 telegramOnlineCount: a.pool.telegramOnlineCount,
                 launchpad: 'pink',
+                source: 'pink'
               }
       
               return sale
@@ -126,8 +141,7 @@ const helper = {
                     }
                 }
 
-                console.log(sales)
-                return sales                
+                return sales.filter(item => item !== undefined)
             } catch (e) {
                 console.log(e)
             }
@@ -137,6 +151,25 @@ const helper = {
                 let res = await fetch(`https://api.pinksale.finance/api/v1/pool/search?qs=${search}`);
                 let ans = await res.json();
                 return helper.pink.formatSale(ans.docs[0]) || undefined
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        statusUpdate: async () => {
+            try {
+                let nonClosedFromDb= [] // replaced with actual launches from db once that's set up
+                let nonClosedFromPink = await helper.pink.getNonClosed()
+                let fromPinkObject = helper.general.arrayToObject(nonClosedFromPink, 'presaleAddress')
+                for (let i = 0; i < nonClosedFromDb.length; i++) {
+                    if (fromPinkObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in pink api (so either status 0 or 1)
+                        if (nonClosedFromDb[i].status !== fromPinkObject[nonClosedFromDb[i].presaleAddress].status) { // if status different
+                            // mongodb function to update to status = 1                                                        
+                        }
+                    } else { // not in pink api anymore (so either status = 2,3,4)
+                        let sale = await helper.pink.getSingleSale(nonClosedFromDb[i].presaleAddress)
+                        // mongodb function to update to status from sale (sale.status)
+                    }
+                }
             } catch (e) {
                 console.log(e)
             }
@@ -171,12 +204,14 @@ const helper = {
                 
                 for (let i = 0; i < answer.length; i++) {
                     let sale = await helper.gempad.getSingleSale(answer[i].presaleAddress, helper.gempad.convertChainToId(answer[i].chain), answer[i].poolType == "special" ? true : false)
-                    await new Promise(resolve => setTimeout(resolve, 500))
+                    await new Promise(resolve => setTimeout(resolve, 1000))
                     answer[i].websiteLink = sale.pool.ipfs ? sale.pool.ipfs.website : undefined
                     answer[i].submittedDescription = sale.pool.ipfs ? sale.pool.ipfs.description : undefined
                     answer[i].githubLink = sale.pool.ipfs ? sale.pool.ipfs.github : undefined
                     answer[i].chain = Number(helper.gempad.convertChainToId(answer[i].chain))
                     answer[i].launchpad = 'gempad'
+                    answer[i].source = 'gempad'
+                    answer[i].auditLink = sale.pool.auditLink
 
                     answer[i].baseSymbol = answer[i].baseTokenSymbol
                     answer[i].telegramMemberCount = answer[i].tefc
@@ -184,10 +219,8 @@ const helper = {
                     delete answer[i].baseTokenSymbol
                     delete answer[i].tefc
                     delete answer[i].teoc
-
                 }
                 
-                console.log(answer)
                 return answer
             } catch (e) {
                 console.log(e)
@@ -197,7 +230,27 @@ const helper = {
             try {
                 let response = await fetch(`https://gempad.app/api/${chainId}/${isSpecialSale ? "special-pool-api" : "pool-api"}/${saleAddress}`, helper.gempad.fetchOptions)
                 let answer = await response.json()
+                console.log(answer)
                 return answer
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        statusUpdate: async () => {
+            try {
+                let nonClosedFromDb= [] // replaced with actual launches from db once that's set up
+                let nonClosedFromGem = await helper.gempad.getNonClosed()
+                let fromGemObject = helper.general.arrayToObject(nonClosedFromGem, 'presaleAddress')
+                for (let i = 0; i < nonClosedFromDb.length; i++) {
+                    if (fromGemObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in gem api (so either status 0 or 1)
+                        if (nonClosedFromDb[i].status !== fromGemObject[nonClosedFromDb[i].presaleAddress].status) { // if status different
+                            // mongodb function to update to status = 1                                                        
+                        }
+                    } else { // not in gem api anymore (so either status = 2,3,4)
+                        let sale = await helper.gempad.getSingleSale(nonClosedFromDb[i].presaleAddress, helper.gempad.convertChainToId(nonClosedFromDb[i].chain), nonClosedFromDb[i].poolType == "special" ? true : false)
+                        // mongodb function to update to status from sale (sale.status)
+                    }
+                }
             } catch (e) {
                 console.log(e)
             }
@@ -286,6 +339,15 @@ const helper = {
         }
     },
     cryptorank: {
+        formatStatus: (status) => {
+            try {
+                if (status == 'upcoming') {return 0}
+                if (status == 'active') {return 1}
+                if (status == 'past') {return 2}
+            } catch (e) {
+                console.log(e)
+            }
+        },
         getUpcoming: async () => {
             try {
                 let response = await fetch('https://api.cryptorank.io/v0/round/upcoming', {
@@ -296,22 +358,44 @@ const helper = {
 
                 for (let i = 0; i < answer.data.length; i++) {
                     await new Promise(resolve => setTimeout(resolve, 2000))
-                    let response2 = await fetch(`https://api.cryptorank.io/v0/coins/${answer.data[i].key}?locale=en`)
-                    let answer2 = await response2.json()
-                    let formattedIco = {
-                        tokenName: answer2.data.name,
-                        tokenSymbol: answer2.data.symbol,
-                        websiteLink: answer2.data.links.find(item => item.type == "web")?.value,
-                        twitterLink: answer2.data.links.find(item => item.type == "twitter")?.value,
-                        whitepaperLink: answer2.data.links.find(item => item.type == "whitepaper")?.value,
-                        telegramLink: answer2.data.links.find(item => item.type == "telegram")?.value,
-                        submittedDescription: answer2.data.description,
-                        status: answer2.data.icoStatus // unify status attribute across all launch sources (pink, gem, this, etc.)
-                    }
-                    formatted.push(formattedIco)
+                    const single = await helper.cryptorank.getSingle(answer.data[i].key)
+                    formatted.push(single)
                 }
 
                 return formatted
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        getSingle: async (key) => {
+            try {
+                let response = await fetch(`https://api.cryptorank.io/v0/coins/${key}?locale=en`)
+                let answer = await response.json()
+                let single = answer.data
+
+                let formattedIco = {
+                    tokenName: single.name,
+                    tokenSymbol: single.symbol,
+                    websiteLink: single.links.find(item => item.type == "web")?.value,
+                    twitterLink: single.links.find(item => item.type == "twitter")?.value,
+                    whitepaperLink: single.links.find(item => item.type == "whitepaper")?.value,
+                    telegramLink: single.links.find(item => item.type == "telegram")?.value,
+                    githubLink: single.links.find(item => item.type == "github")?.value,
+                    gitbookLink: single.links.find(item => item.type == "gitbook")?.value,
+                    submittedDescription: single.description,
+                    status: helper.cryptorank.formatStatus(single.icoStatus), // upcoming, past, active,
+                    initialMarketCap: single.initialMarketCap || undefined,
+                    athMarketCap: single.athMarketCap?.USD || undefined
+                }
+
+                return formattedIco
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        statusUpdate: async () => {
+            try {
+                // TODO
             } catch (e) {
                 console.log(e)
             }
