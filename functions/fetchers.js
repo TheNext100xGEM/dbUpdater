@@ -11,8 +11,7 @@ const helper = {
         },
         run : async () => {
             try {
-                // const all = await helper.db.getNonClosedBySource('cryptorank')
-                // console.log(all)
+
             } catch (e) {
                 console.log(e)
             }
@@ -62,7 +61,7 @@ const helper = {
             const client = new MongoClient(uri)
             try {
                 await client.connect()
-                await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).updateOne(index, {$set: data}).toArray()
+                await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).updateOne(index, {$set: data})
             } catch (e) {
                 console.log(e)
             } finally {
@@ -74,9 +73,9 @@ const helper = {
             const client = new MongoClient(uri)
             try {
                 await client.connect()
-                const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source}).project({'presaleAddress': 1, '_id': 0}).toArray()
+                const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source}).project({'uniqueKey': 1, '_id': 0}).toArray()
 
-                return all.map(item => item.presaleAddress)
+                return all.map(item => item.uniqueKey)
             } catch (e) {
                 console.log(e)
             } finally {
@@ -509,6 +508,22 @@ const helper = {
             } catch (e) {
                 console.log(e)
             }
-        }
+        },
+        checkNew: async () => {
+            try {
+                const alreadyIncluded = await helper.db.getAllMinBySource('cryptorank')
+                const nonClosedFromCRApi = await helper.cryptorank.getNonClosed()
+                
+                const toInclude = nonClosedFromCRApi.filter(item => !alreadyIncluded.includes(item.uniqueKey))
+                console.log(toInclude)
+                if (toInclude.length > 0) {
+                    await helper.db.createListings(toInclude)
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        },
     }
 }
+
+helper.general.run()
