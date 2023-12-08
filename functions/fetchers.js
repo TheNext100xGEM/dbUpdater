@@ -1,9 +1,6 @@
 require('dotenv').config({ path: `.env.local`})
-// included audit report in pink and gem entries (not available for cryptorank)
-// coded status updaters for pink and gem
-// added github and gitbook links to cryptorank
-// added initial marketcap to cryptorank
-// added source attribute
+const {MongoClient, ServerApiVersion } = require('mongodb')
+
 const helper = {
     general: {
         arrayToObject : (array, keyField) => {
@@ -12,6 +9,66 @@ const helper = {
                 return obj
             }, {})
         },
+        run : async () => {
+            try {
+                // const pinksale = await helper.pink.getNonClosed()
+                // await helper.db.createListings(pinksale)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+    },
+    db: {
+        createListings: async (newListings) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).insertMany(newListings)
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getNonClosed: async () => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const nonClosed = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'status': {$lt: 2}}).toArray()
+                return nonClosed
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getNonClosedBySource: async (source) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const nonClosed = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source, 'status': {$lt: 2}}).toArray()
+                return nonClosed
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        updateListing: async (index, data) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).updateOne(index, {$set: data}).toArray()
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        }
     },
     pink: {
         banned: [ // sales I noticed that shouldn't be returned by the api but still are
@@ -117,8 +174,8 @@ const helper = {
                 status: helper.pink.getStatus(a),
                 telegramMemberCount: a.pool.telegramMemberCount,
                 telegramOnlineCount: a.pool.telegramOnlineCount,
-                launchpad: 'pink',
-                source: 'pink'
+                launchpad: 'pinksale',
+                source: 'pinksale'
               }
       
               return sale
@@ -157,17 +214,19 @@ const helper = {
         },
         statusUpdate: async () => {
             try {
-                let nonClosedFromDb= [] // replaced with actual launches from db once that's set up
-                let nonClosedFromPink = await helper.pink.getNonClosed()
-                let fromPinkObject = helper.general.arrayToObject(nonClosedFromPink, 'presaleAddress')
+                let nonClosedFromDb= await helper.db.getNonClosedBySource('pinksale') // replaced with actual launches from db once that's set up
+                let nonClosedFromPinkApi = await helper.pink.getNonClosed()
+                let fromPinkObject = helper.general.arrayToObject(nonClosedFromPinkApi, 'presaleAddress')
                 for (let i = 0; i < nonClosedFromDb.length; i++) {
                     if (fromPinkObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in pink api (so either status 0 or 1)
                         if (nonClosedFromDb[i].status !== fromPinkObject[nonClosedFromDb[i].presaleAddress].status) { // if status different
-                            // mongodb function to update to status = 1                                                        
+                            console.log('in api and status different', nonClosedFromDb[i], fromPinkObject[nonClosedFromDb[i].presaleAddress])
+                            // await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': fromPinkObject[nonClosedFromDb[i].presaleAddress].status})
                         }
                     } else { // not in pink api anymore (so either status = 2,3,4)
                         let sale = await helper.pink.getSingleSale(nonClosedFromDb[i].presaleAddress)
-                        // mongodb function to update to status from sale (sale.status)
+                        console.log('not in api and status different', nonClosedFromDb[i], sale)                                                
+                        // await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': sale.status})
                     }
                 }
             } catch (e) {
@@ -230,7 +289,6 @@ const helper = {
             try {
                 let response = await fetch(`https://gempad.app/api/${chainId}/${isSpecialSale ? "special-pool-api" : "pool-api"}/${saleAddress}`, helper.gempad.fetchOptions)
                 let answer = await response.json()
-                console.log(answer)
                 return answer
             } catch (e) {
                 console.log(e)
@@ -238,17 +296,20 @@ const helper = {
         },
         statusUpdate: async () => {
             try {
-                let nonClosedFromDb= [] // replaced with actual launches from db once that's set up
-                let nonClosedFromGem = await helper.gempad.getNonClosed()
-                let fromGemObject = helper.general.arrayToObject(nonClosedFromGem, 'presaleAddress')
+                let nonClosedFromDb= await helper.db.getNonClosedBySource('gempad') // replaced with actual launches from db once that's set up
+                let nonClosedFromGemApi = await helper.gempad.getNonClosed()
+                let fromGemObject = helper.general.arrayToObject(nonClosedFromGemApi, 'presaleAddress')
+
                 for (let i = 0; i < nonClosedFromDb.length; i++) {
-                    if (fromGemObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in gem api (so either status 0 or 1)
+                    if (fromGemObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in gem api (so either status = 0,1)
                         if (nonClosedFromDb[i].status !== fromGemObject[nonClosedFromDb[i].presaleAddress].status) { // if status different
-                            // mongodb function to update to status = 1                                                        
+                            console.log('in api and status different', nonClosedFromDb[i], fromGemObject[nonClosedFromDb[i].presaleAddress])
+                            await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': fromGemObject[nonClosedFromDb[i].presaleAddress].status})
                         }
                     } else { // not in gem api anymore (so either status = 2,3,4)
                         let sale = await helper.gempad.getSingleSale(nonClosedFromDb[i].presaleAddress, helper.gempad.convertChainToId(nonClosedFromDb[i].chain), nonClosedFromDb[i].poolType == "special" ? true : false)
-                        // mongodb function to update to status from sale (sale.status)
+                        console.log('not in api and status different', nonClosedFromDb[i], sale)                                                
+                        await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': sale.status})
                     }
                 }
             } catch (e) {
