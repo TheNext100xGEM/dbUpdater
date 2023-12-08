@@ -1,4 +1,4 @@
-require('dotenv').config({ path: `.env.local`})
+require('dotenv').config({ path: '.env.local'})
 const { MongoClient } = require('mongodb')
 
 const helper = {
@@ -11,7 +11,7 @@ const helper = {
         },
         run : async () => {
             try {
-                // const all = await helper.db.getAllMinBySource('gempad')
+                // const all = await helper.db.getNonClosedBySource('cryptorank')
                 // console.log(all)
             } catch (e) {
                 console.log(e)
@@ -494,7 +494,8 @@ const helper = {
                     status: helper.cryptorank.formatStatus(single.icoStatus),
                     initialMarketCap: single.initialMarketCap || undefined,
                     athMarketCap: single.athMarketCap?.USD || undefined,
-                    logoLink: single.image?.x150
+                    logoLink: single.image?.x150,
+                    source: 'cryptorank'
                 }
 
                 return formattedIco
