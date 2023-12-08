@@ -163,6 +163,7 @@ const helper = {
               let kycDetails = a.pool.kycDetails == "" ? undefined : JSON.parse(a.pool.kycDetails)
         
               let sale = {
+                uniqueKey: a.poolAddress,
                 presaleAddress: a.poolAddress,
                 tokenName: a.token.name,
                 tokenSymbol: a.token.symbol,
@@ -181,6 +182,7 @@ const helper = {
                 submittedDescription: details.h,
                 githubLink: details.e,
                 redditLink: details.g,
+                logoLink: details.a,
                 startTime: a.pool.startTime * 1000,
                 endTime: a.pool.endTime * 1000,
                 poolType: a.pool.poolType,
@@ -292,9 +294,11 @@ const helper = {
                 for (let i = 0; i < answer.length; i++) {
                     let sale = await helper.gempad.getSingleSale(answer[i].presaleAddress, helper.gempad.convertChainToId(answer[i].chain), answer[i].poolType == "special" ? true : false)
                     await new Promise(resolve => setTimeout(resolve, 500))
+                    answer[i].uniqueKey = answer[i].presaleAddress
                     answer[i].websiteLink = sale.pool.ipfs ? sale.pool.ipfs.website : undefined
                     answer[i].submittedDescription = sale.pool.ipfs ? sale.pool.ipfs.description : undefined
                     answer[i].githubLink = sale.pool.ipfs ? sale.pool.ipfs.github : undefined
+                    answer[i].logoLink = sale.pool.ipfs ? sale.pool.ipfs.logo : undefined
                     answer[i].chain = Number(helper.gempad.convertChainToId(answer[i].chain))
                     answer[i].launchpad = 'gempad'
                     answer[i].source = 'gempad'
@@ -477,6 +481,7 @@ const helper = {
                 let single = answer.data
 
                 let formattedIco = {
+                    uniqueKey: `${single.key}-cryptorank`,
                     tokenName: single.name,
                     tokenSymbol: single.symbol,
                     websiteLink: single.links.find(item => item.type == "web")?.value,
@@ -486,9 +491,10 @@ const helper = {
                     githubLink: single.links.find(item => item.type == "github")?.value,
                     gitbookLink: single.links.find(item => item.type == "gitbook")?.value,
                     submittedDescription: single.description,
-                    status: helper.cryptorank.formatStatus(single.icoStatus), // upcoming, past, active,
+                    status: helper.cryptorank.formatStatus(single.icoStatus),
                     initialMarketCap: single.initialMarketCap || undefined,
-                    athMarketCap: single.athMarketCap?.USD || undefined
+                    athMarketCap: single.athMarketCap?.USD || undefined,
+                    logoLink: single.image?.x150
                 }
 
                 return formattedIco
