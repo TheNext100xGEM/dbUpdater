@@ -1,5 +1,5 @@
 require('dotenv').config({ path: `.env.local`})
-const {MongoClient, ServerApiVersion } = require('mongodb')
+const { MongoClient } = require('mongodb')
 
 const helper = {
     general: {
@@ -11,8 +11,8 @@ const helper = {
         },
         run : async () => {
             try {
-                // const pinksale = await helper.pink.getNonClosed()
-                // await helper.db.createListings(pinksale)
+                // const all = await helper.db.getAllMinBySource('gempad')
+                // console.log(all)
             } catch (e) {
                 console.log(e)
             }
@@ -63,6 +63,20 @@ const helper = {
             try {
                 await client.connect()
                 await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).updateOne(index, {$set: data}).toArray()
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getAllMinBySource: async (source) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source}).project({'presaleAddress': 1, '_id': 0}).toArray()
+
+                return all.map(item => item.presaleAddress)
             } catch (e) {
                 console.log(e)
             } finally {
@@ -232,7 +246,21 @@ const helper = {
             } catch (e) {
                 console.log(e)
             }
-        }
+        },
+        checkNew: async () => {
+            try {
+                const alreadyIncluded = await helper.db.getAllMinBySource('pinksale')
+                const nonClosedFromPinkApi = await helper.pink.getNonClosed()
+                
+                const toInclude = nonClosedFromPinkApi.filter(item => !alreadyIncluded.includes(item.presaleAddress))
+                console.log(toInclude)
+                if (toInclude.length > 0) {
+                    await helper.db.createListings(toInclude)
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        },
     },
     gempad: {
         fetchOptions: {
@@ -263,7 +291,7 @@ const helper = {
                 
                 for (let i = 0; i < answer.length; i++) {
                     let sale = await helper.gempad.getSingleSale(answer[i].presaleAddress, helper.gempad.convertChainToId(answer[i].chain), answer[i].poolType == "special" ? true : false)
-                    await new Promise(resolve => setTimeout(resolve, 1000))
+                    await new Promise(resolve => setTimeout(resolve, 500))
                     answer[i].websiteLink = sale.pool.ipfs ? sale.pool.ipfs.website : undefined
                     answer[i].submittedDescription = sale.pool.ipfs ? sale.pool.ipfs.description : undefined
                     answer[i].githubLink = sale.pool.ipfs ? sale.pool.ipfs.github : undefined
@@ -315,7 +343,21 @@ const helper = {
             } catch (e) {
                 console.log(e)
             }
-        }
+        },
+        checkNew: async () => {
+            try {
+                const alreadyIncluded = await helper.db.getAllMinBySource('gempad')
+                const nonClosedFromGemApi = await helper.gempad.getNonClosed()
+                
+                const toInclude = nonClosedFromGemApi.filter(item => !alreadyIncluded.includes(item.presaleAddress))
+                console.log(toInclude)
+                if (toInclude.length > 0) {
+                    await helper.db.createListings(toInclude)
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        },
     },
     polkastarter: {
         getUpcoming: async () => {
