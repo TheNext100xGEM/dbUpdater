@@ -229,7 +229,7 @@ const helper = {
         },
         statusUpdate: async () => {
             try {
-                let nonClosedFromDb= await helper.db.getNonClosedBySource('pinksale') // replaced with actual launches from db once that's set up
+                let nonClosedFromDb= await helper.db.getNonClosedBySource('pinksale')
                 let nonClosedFromPinkApi = await helper.pink.getNonClosed()
                 let fromPinkObject = helper.general.arrayToObject(nonClosedFromPinkApi, 'presaleAddress')
                 for (let i = 0; i < nonClosedFromDb.length; i++) {
@@ -327,12 +327,12 @@ const helper = {
         },
         statusUpdate: async () => {
             try {
-                let nonClosedFromDb= await helper.db.getNonClosedBySource('gempad') // replaced with actual launches from db once that's set up
+                let nonClosedFromDb= await helper.db.getNonClosedBySource('gempad')
                 let nonClosedFromGemApi = await helper.gempad.getNonClosed()
                 let fromGemObject = helper.general.arrayToObject(nonClosedFromGemApi, 'presaleAddress')
 
                 for (let i = 0; i < nonClosedFromDb.length; i++) {
-                    if (fromGemObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in gem api (so either status = 0,1)
+                    if (fromGemObject[nonClosedFromDb[i].presaleAddress] !== undefined) {
                         if (nonClosedFromDb[i].status !== fromGemObject[nonClosedFromDb[i].presaleAddress].status) { // if status different
                             console.log('in api and status different', nonClosedFromDb[i], fromGemObject[nonClosedFromDb[i].presaleAddress])
                             await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': fromGemObject[nonClosedFromDb[i].presaleAddress].status})
@@ -504,7 +504,22 @@ const helper = {
         },
         statusUpdate: async () => {
             try {
-                // TODO
+                let nonClosedFromDb= await helper.db.getNonClosedBySource('cryptorank')
+                let nonClosedFromCRApi = await helper.gempad.getNonClosed()
+                let fromCRObject = helper.general.arrayToObject(nonClosedFromCRApi, 'uniqueKey')
+
+                for (let i = 0; i < nonClosedFromDb.length; i++) {
+                    if (fromCRObject[nonClosedFromDb[i].uniqueKey] !== undefined) { // still in cryptorank api (so either status = 0,1)
+                        if (nonClosedFromDb[i].status !== fromCRObject[nonClosedFromDb[i].uniqueKey].status) { // if status different
+                            console.log('in api and status different', nonClosedFromDb[i], fromCRObject[nonClosedFromDb[i].uniqueKey])
+                            await helper.db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': fromCRObject[nonClosedFromDb[i].uniqueKey].status})
+                        }
+                    } else { // not in gem api anymore (so either status = 2,3,4)
+                        let sale = await helper.cryptorank.getSingle(nonClosedFromDb[i].uniqueKey)
+                        console.log('not in api and status different', nonClosedFromDb[i], sale)                                                
+                        await helper.db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': sale.status})
+                    }
+                }
             } catch (e) {
                 console.log(e)
             }
@@ -525,5 +540,3 @@ const helper = {
         },
     }
 }
-
-helper.general.run()
