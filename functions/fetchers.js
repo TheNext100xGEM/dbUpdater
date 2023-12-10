@@ -11,7 +11,10 @@ const helper = {
         },
         run : async () => {
             try {
-
+                // const all = await helper.cryptorank.getUpcoming()
+                // await helper.db.createListings(all)
+                // const all = await helper.db.getNonClosedBySource('cryptorank')
+                // console.log(all)
             } catch (e) {
                 console.log(e)
             }
@@ -76,6 +79,20 @@ const helper = {
                 const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source}).project({'uniqueKey': 1, '_id': 0}).toArray()
 
                 return all.map(item => item.uniqueKey)
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getCollections: async () => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const collections = await client.db(process.env.DB_NAME).listCollections().toArray()
+                console.log(collections)
+                return collections
             } catch (e) {
                 console.log(e)
             } finally {
