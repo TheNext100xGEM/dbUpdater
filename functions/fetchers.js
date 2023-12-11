@@ -11,10 +11,7 @@ const helper = {
         },
         run : async () => {
             try {
-                // const all = await helper.cryptorank.getUpcoming()
-                // await helper.db.createListings(all)
-                // const all = await helper.db.getNonClosedBySource('cryptorank')
-                // console.log(all)
+
             } catch (e) {
                 console.log(e)
             }
@@ -201,6 +198,7 @@ const helper = {
                 logoLink: details.a,
                 startTime: a.pool.startTime * 1000,
                 endTime: a.pool.endTime * 1000,
+                createdAt: Date.parse(a.createdAt),
                 poolType: a.pool.poolType,
                 chain: a.chainId,
                 status: helper.pink.getStatus(a),
@@ -319,6 +317,7 @@ const helper = {
                     answer[i].launchpad = 'gempad'
                     answer[i].source = 'gempad'
                     answer[i].auditLink = sale.pool.auditLink
+                    answer[i].createdAt = Date.parse(sale.pool.createdAt)
 
                     answer[i].baseSymbol = answer[i].baseTokenSymbol
                     answer[i].telegramMemberCount = answer[i].tefc
@@ -478,6 +477,7 @@ const helper = {
                 })
                 let answer = await response.json()
                 let formatted = []
+                console.log(answer)
 
                 for (let i = 0; i < answer.data.length; i++) {
                     await new Promise(resolve => setTimeout(resolve, 2000))
@@ -495,6 +495,7 @@ const helper = {
                 let response = await fetch(`https://api.cryptorank.io/v0/coins/${key}?locale=en`)
                 let answer = await response.json()
                 let single = answer.data
+                console.log(single)
 
                 let formattedIco = {
                     uniqueKey: `${single.key}-cryptorank`,
