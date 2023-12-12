@@ -9,6 +9,7 @@ interface Gempad {
   presaleLink: string;
   startTime: number;
   endTime: number;
+  createdAt: number;
   softCap: number;
   hardCap: number;
   saleToken: string;
@@ -59,6 +60,7 @@ interface Pinksale {
   redditLink: string | undefined;
   startTime: number;
   endTime: number;
+  createdAt: number;
   poolType: string;
   chain: number;
   status: number;

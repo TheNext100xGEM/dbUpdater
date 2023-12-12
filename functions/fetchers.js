@@ -18,12 +18,25 @@ const helper = {
         }
     },
     db: {
-        createListings: async (newListings) => {
+        createListings: async (collName, newListings) => {
             const uri = process.env.DB_URI
             const client = new MongoClient(uri)
             try {
                 await client.connect()
-                await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).insertMany(newListings)
+                await client.db(process.env.DB_NAME).collection(collName).insertMany(newListings)
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getRaw: async () => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const raw = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL_RAW).find().toArray()
+                return raw
             } catch (e) {
                 console.log(e)
             } finally {
@@ -94,6 +107,22 @@ const helper = {
                 console.log(e)
             } finally {
                 await client.close()
+            }
+        },
+        createCollection: async (collName) => {
+            try {
+                const uri = process.env.DB_URI
+                const client = new MongoClient(uri)
+                try {
+                    await client.connect()
+                    await client.db(process.env.DB_NAME).createCollection(collName)
+                } catch (e) {
+                    console.log(e)
+                } finally {
+                    await client.close()
+                }
+            } catch (e) {
+                console.log(e)
             }
         }
     },
@@ -271,7 +300,7 @@ const helper = {
                 const toInclude = nonClosedFromPinkApi.filter(item => !alreadyIncluded.includes(item.presaleAddress))
                 console.log(toInclude)
                 if (toInclude.length > 0) {
-                    await helper.db.createListings(toInclude)
+                    await helper.db.createListings(process.env.DB_COLL, toInclude)
                 }
             } catch (e) {
                 console.log(e)
@@ -371,7 +400,7 @@ const helper = {
                 const toInclude = nonClosedFromGemApi.filter(item => !alreadyIncluded.includes(item.presaleAddress))
                 console.log(toInclude)
                 if (toInclude.length > 0) {
-                    await helper.db.createListings(toInclude)
+                    await helper.db.createListings(process.env.DB_COLL, toInclude)
                 }
             } catch (e) {
                 console.log(e)
@@ -482,10 +511,23 @@ const helper = {
                 for (let i = 0; i < answer.data.length; i++) {
                     await new Promise(resolve => setTimeout(resolve, 2000))
                     const single = await helper.cryptorank.getSingle(answer.data[i].key)
-                    formatted.push(single)
+                    await helper.db.createListings(process.env.DB_COLL_RAW, [single.raw])
+                    formatted.push(single.formatted)
+                    console.log(i, '/', answer.data.length)
                 }
 
                 return formatted
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        getSingleRaw: async (key) => {
+            try {
+                let response = await fetch(`https://api.cryptorank.io/v0/coins/${key}?locale=en`)
+                let answer = await response.json()
+                let single = answer.data
+
+                return single
             } catch (e) {
                 console.log(e)
             }
@@ -495,7 +537,6 @@ const helper = {
                 let response = await fetch(`https://api.cryptorank.io/v0/coins/${key}?locale=en`)
                 let answer = await response.json()
                 let single = answer.data
-                console.log(single)
 
                 let formattedIco = {
                     uniqueKey: `${single.key}-cryptorank`,
@@ -515,7 +556,7 @@ const helper = {
                     source: 'cryptorank'
                 }
 
-                return formattedIco
+                return {'formatted': formattedIco, 'raw': single}
             } catch (e) {
                 console.log(e)
             }
@@ -534,8 +575,8 @@ const helper = {
                         }
                     } else { // not in gem api anymore (so either status = 2,3,4)
                         let sale = await helper.cryptorank.getSingle(nonClosedFromDb[i].uniqueKey)
-                        console.log('not in api and status different', nonClosedFromDb[i], sale)                                                
-                        await helper.db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': sale.status})
+                        console.log('not in api and status different', nonClosedFromDb[i], sale.formatted)                                                
+                        await helper.db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': sale.formatted.status})
                     }
                 }
             } catch (e) {
@@ -550,7 +591,7 @@ const helper = {
                 const toInclude = nonClosedFromCRApi.filter(item => !alreadyIncluded.includes(item.uniqueKey))
                 console.log(toInclude)
                 if (toInclude.length > 0) {
-                    await helper.db.createListings(toInclude)
+                    await helper.db.createListings(process.env.DB_COLL, toInclude)
                 }
             } catch (e) {
                 console.log(e)
