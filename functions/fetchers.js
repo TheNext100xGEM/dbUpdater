@@ -11,7 +11,7 @@ const helper = {
         },
         run : async () => {
             try {
-
+                
             } catch (e) {
                 console.log(e)
             }
@@ -103,6 +103,20 @@ const helper = {
                 const collections = await client.db(process.env.DB_NAME).listCollections().toArray()
                 console.log(collections)
                 return collections
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getNumDocuments: async (collName) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const numDocuments = await client.db(process.env.DB_NAME).collection(collName).countDocuments()
+                console.log(numDocuments)
+                return numDocuments
             } catch (e) {
                 console.log(e)
             } finally {
@@ -517,6 +531,25 @@ const helper = {
                 }
 
                 return formatted
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        getPast: async () => {
+            try {
+                let response = await fetch('https://api.cryptorank.io/v0/round/past', {
+                    method: 'POST',
+                })
+                let answer = await response.json()
+                const withStatus = []
+
+                for (let i = 0; i < answer.data.length; i++) {
+                    let elementWithStatus = answer.data[i]
+                    elementWithStatus.icoStatus = 'past'
+                    withStatus.push(elementWithStatus)
+                }
+
+                return withStatus
             } catch (e) {
                 console.log(e)
             }
