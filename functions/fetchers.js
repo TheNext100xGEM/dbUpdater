@@ -15,6 +15,46 @@ const helper = {
             } catch (e) {
                 console.log(e)
             }
+        },
+        addPastCR : async () => {
+            try {
+                const all = await helper.cryptorank.getPast()
+                const inDb = await helper.db.getAllMinBySource('cryptorank')
+
+                let start = 2750
+                let end = all.length
+
+                let includeProd = []
+                let includeRaw = []
+
+                for (let i = start; i < end; i++) {
+                    if (!inDb.includes(`${all[i].key}-cryptorank`)) {
+                        const launchpads = all[i].launchpads.map(item => item.name)
+                        const chains = all[i].blockchains.map(item => item.name)
+                        console.log(i)
+
+                        const single = await helper.cryptorank.getSingle(all[i].key)
+                        const formatted = {...single.formatted, 'chains': chains, 'launchpads': launchpads, 'athRoi': all[i].athRoi}
+
+                        console.log(formatted)
+                        includeProd.push(formatted)
+                        includeRaw.push(single.raw)
+                        await new Promise(resolve => setTimeout(resolve, 1000))
+                    }
+                }
+
+                if (includeProd.length > 0) {
+                    console.log(includeProd.length)
+                    await helper.db.createListings(process.env.DB_COLL, includeProd)
+                }
+                if (includeRaw.length > 0) {
+                    console.log(includeRaw.length)
+                    await helper.db.createListings(process.env.DB_COLL_RAW, includeRaw)
+                }
+                console.log(all.length)
+            } catch (e) {
+                console.log(e)
+            }
         }
     },
     db: {
@@ -137,6 +177,45 @@ const helper = {
                 }
             } catch (e) {
                 console.log(e)
+            }
+        },
+        getByUniqueKey: async (key) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'uniqueKey': key}).toArray()
+
+                return all
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getLowQuality: async () => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const nonClosed = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'kyc': false}).toArray()
+                return nonClosed
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        removeListings: async () => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).deleteMany({'kyc': false})
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
             }
         }
     },
@@ -504,6 +583,13 @@ const helper = {
         }
     },
     cryptorank: {
+        getKeyFromUnique: (uniqueKey) => {
+            try {
+                return uniqueKey.slice(0, -11)
+            } catch (e) {
+                console.log(e)
+            }
+        },
         formatStatus: (status) => {
             try {
                 if (status == 'upcoming') {return 0}
@@ -519,15 +605,17 @@ const helper = {
                     method: 'POST',
                 })
                 let answer = await response.json()
+                // console.log(answer.data)
                 let formatted = []
-                console.log(answer)
 
                 for (let i = 0; i < answer.data.length; i++) {
-                    await new Promise(resolve => setTimeout(resolve, 2000))
+                    const launchpads = answer.data[i].launchpads.map(item => item.name)
+                    const chains = answer.data[i].blockchains.map(item => item.name)
                     const single = await helper.cryptorank.getSingle(answer.data[i].key)
-                    await helper.db.createListings(process.env.DB_COLL_RAW, [single.raw])
-                    formatted.push(single.formatted)
+                    const formattedSingle = {...single.formatted, 'chains': chains, 'launchpads': launchpads}
+                    formatted.push(formattedSingle)
                     console.log(i, '/', answer.data.length)
+                    await new Promise(resolve => setTimeout(resolve, 500))
                 }
 
                 return formatted
@@ -570,6 +658,7 @@ const helper = {
                 let response = await fetch(`https://api.cryptorank.io/v0/coins/${key}?locale=en`)
                 let answer = await response.json()
                 let single = answer.data
+                // console.log(single)
 
                 let formattedIco = {
                     uniqueKey: `${single.key}-cryptorank`,
@@ -583,13 +672,16 @@ const helper = {
                     gitbookLink: single.links.find(item => item.type == "gitbook")?.value,
                     submittedDescription: single.description,
                     status: helper.cryptorank.formatStatus(single.icoStatus),
+                    icoStatus: single.icoStatus,
                     initialMarketCap: single.initialMarketCap || undefined,
                     athMarketCap: single.athMarketCap?.USD || undefined,
                     logoLink: single.image?.x150,
-                    source: 'cryptorank'
+                    category: single.category,
+                    source: 'cryptorank',
+                    analyzed: false
                 }
 
-                return {'formatted': formattedIco, 'raw': single}
+                return {'formatted': formattedIco, 'raw': {...single, 'callType': 'single'}}
             } catch (e) {
                 console.log(e)
             }
@@ -597,7 +689,7 @@ const helper = {
         statusUpdate: async () => {
             try {
                 let nonClosedFromDb= await helper.db.getNonClosedBySource('cryptorank')
-                let nonClosedFromCRApi = await helper.gempad.getNonClosed()
+                let nonClosedFromCRApi = await helper.cryptorank.getUpcoming()
                 let fromCRObject = helper.general.arrayToObject(nonClosedFromCRApi, 'uniqueKey')
 
                 for (let i = 0; i < nonClosedFromDb.length; i++) {
@@ -606,10 +698,11 @@ const helper = {
                             console.log('in api and status different', nonClosedFromDb[i], fromCRObject[nonClosedFromDb[i].uniqueKey])
                             await helper.db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': fromCRObject[nonClosedFromDb[i].uniqueKey].status})
                         }
-                    } else { // not in gem api anymore (so either status = 2,3,4)
-                        let sale = await helper.cryptorank.getSingle(nonClosedFromDb[i].uniqueKey)
+                    } else { // not in api anymore (so either status = 2,3,4)
+                        let sale = await helper.cryptorank.getSingle(helper.cryptorank.getKeyFromUnique(nonClosedFromDb[i].uniqueKey))
                         console.log('not in api and status different', nonClosedFromDb[i], sale.formatted)                                                
                         await helper.db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': sale.formatted.status})
+                        await new Promise(resolve => setTimeout(resolve, 500))
                     }
                 }
             } catch (e) {
@@ -619,7 +712,7 @@ const helper = {
         checkNew: async () => {
             try {
                 const alreadyIncluded = await helper.db.getAllMinBySource('cryptorank')
-                const nonClosedFromCRApi = await helper.cryptorank.getNonClosed()
+                const nonClosedFromCRApi = await helper.cryptorank.getUpcoming()
                 
                 const toInclude = nonClosedFromCRApi.filter(item => !alreadyIncluded.includes(item.uniqueKey))
                 console.log(toInclude)
