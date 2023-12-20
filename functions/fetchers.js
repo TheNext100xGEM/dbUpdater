@@ -1,6 +1,10 @@
 require('dotenv').config({ path: '.env.local'})
 const { MongoClient } = require('mongodb')
 
+// ran updates on cryptorank
+// unified chains,launchpads data type for all sources
+// fully updated/simplified gempad checkNew and statusUpdate processes
+
 const helper = {
     general: {
         arrayToObject : (array, keyField) => {
@@ -11,7 +15,7 @@ const helper = {
         },
         run : async () => {
             try {
-                
+
             } catch (e) {
                 console.log(e)
             }
@@ -55,7 +59,27 @@ const helper = {
             } catch (e) {
                 console.log(e)
             }
-        }
+        },
+        getChainsFromCR : async () => {
+            try {
+                const cr = await helper.db.getBySource('cryptorank')
+                const chains = cr.reduce((acc, cv) => {
+                    if (cv.chains && Array.isArray(cv.chains)) {
+                        cv.chains.forEach(chain => {
+                            if (!acc.includes(chain)) {
+                                acc.push(chain.trim())
+                            }
+                        })
+                    }
+                    return acc.sort()
+                }, [])
+
+                console.log(chains)
+                return chains                
+            } catch (e) {
+                console.log(e)
+            }
+        },
     },
     db: {
         createListings: async (collName, newListings) => {
@@ -102,6 +126,19 @@ const helper = {
             try {
                 await client.connect()
                 const nonClosed = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source, 'status': {$lt: 2}}).toArray()
+                return nonClosed
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+        getBySource: async (source) => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const nonClosed = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source}).toArray()
                 return nonClosed
             } catch (e) {
                 console.log(e)
@@ -217,7 +254,21 @@ const helper = {
             } finally {
                 await client.close()
             }
-        }
+        },
+        getMissingAnalyzed: async () => {
+            const uri = process.env.DB_URI
+            const client = new MongoClient(uri)
+            try {
+                await client.connect()
+                const missing = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'analyzed': {$exists: false}}).toArray()
+                return missing
+            } catch (e) {
+                console.log(e)
+            } finally {
+                await client.close()
+            }
+        },
+
     },
     pink: {
         banned: [ // sales I noticed that shouldn't be returned by the api but still are
@@ -266,6 +317,11 @@ const helper = {
             '0x3e87172d8c67B8673FeD025D96A28EDc966d48f5',
         ],
         chains: [1, 56, 42161],
+        formatChain: (chainId) => {
+            if (chainId === 1) {return 'Ethereum'}
+            if (chainId === 56) {return 'BNB'}
+            if (chainId === 42161) {return 'Arbitrum'}
+        },
         getStatus: (sale) => { // 0: upcoming, 1: open, 2: filled, 3: failed, 4: launched
             try {
                 const now = Date.now();
@@ -327,7 +383,8 @@ const helper = {
                 telegramMemberCount: a.pool.telegramMemberCount,
                 telegramOnlineCount: a.pool.telegramOnlineCount,
                 launchpad: 'pinksale',
-                source: 'pinksale'
+                source: 'pinksale',
+                launchpads: ['PinkSale']
               }
       
               return sale
@@ -377,7 +434,7 @@ const helper = {
                         }
                     } else { // not in pink api anymore (so either status = 2,3,4)
                         let sale = await helper.pink.getSingleSale(nonClosedFromDb[i].presaleAddress)
-                        console.log('not in api and status different', nonClosedFromDb[i], sale)                                                
+                        console.log('not in api and status different', nonClosedFromDb[i], sale)
                         // await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': sale.status})
                     }
                 }
@@ -390,10 +447,11 @@ const helper = {
                 const alreadyIncluded = await helper.db.getAllMinBySource('pinksale')
                 const nonClosedFromPinkApi = await helper.pink.getNonClosed()
                 
-                const toInclude = nonClosedFromPinkApi.filter(item => !alreadyIncluded.includes(item.presaleAddress))
-                console.log(toInclude)
-                if (toInclude.length > 0) {
-                    await helper.db.createListings(process.env.DB_COLL, toInclude)
+                const toInclude = nonClosedFromPinkApi.filter(item => !alreadyIncluded.includes(item.presaleAddress) && item.audit && item.kyc)
+                const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
+                console.log(toIncludeWithAnalyzedFalse)
+                if (toIncludeWithAnalyzedFalse.length > 0) {
+                    await helper.db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
                 }
             } catch (e) {
                 console.log(e)
@@ -422,34 +480,67 @@ const helper = {
             if (chain == 'Shibarium') {return '109'}
             if (chain == 'MaxxChain') {return '10201'}
         },
+        formatChainString: (chain) => {
+            if (chain == 'BSC') {return 'BNB'}
+            else {return chain}
+        },
+        formatIdToChain: (id) => {
+            try {
+                switch (id) {
+                    case 1: return 'Ethereum'
+                    case 56: return 'BNB'
+                    case 40: return 'Telos'
+                    case 137: return 'Polygon'
+                    case 25: return 'Cronos'
+                    case 2000: return 'Dogechain'
+                    case 3797: return 'Alvey'
+                    case 42161: return 'Arbitrum'
+                    case 1116: return 'Core'
+                    case 369: return 'PulseChain'
+                    case 8453: return 'Base'
+                    case 204: return 'opBNB'
+                    case 109: return 'Shibarium'
+                    case 10201: return 'MaxxChain'
+                    default: return null
+                  }
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        getNonClosedFromLw: async () => {
+            try {
+                let response = await fetch(process.env.GEM_NON_CLOSED)
+                let answer = await response.json()
+
+                return answer
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        getPoolFromLw: async (presaleAddress) => {
+            try {
+                let response = await fetch(`${process.env.GEM_FROM_LW}?pa=${presaleAddress}`)
+                let answer = await response.json()
+
+                return answer
+            } catch (e) {
+                console.log(e)
+            }
+        },
         getNonClosed: async () => {
             try {
                 let response = await fetch(process.env.GEM_NON_CLOSED)
                 let answer = await response.json()
+                const formattedSales = []
                 
                 for (let i = 0; i < answer.length; i++) {
-                    let sale = await helper.gempad.getSingleSale(answer[i].presaleAddress, helper.gempad.convertChainToId(answer[i].chain), answer[i].poolType == "special" ? true : false)
-                    await new Promise(resolve => setTimeout(resolve, 500))
-                    answer[i].uniqueKey = answer[i].presaleAddress
-                    answer[i].websiteLink = sale.pool.ipfs ? sale.pool.ipfs.website : undefined
-                    answer[i].submittedDescription = sale.pool.ipfs ? sale.pool.ipfs.description : undefined
-                    answer[i].githubLink = sale.pool.ipfs ? sale.pool.ipfs.github : undefined
-                    answer[i].logoLink = sale.pool.ipfs ? sale.pool.ipfs.logo : undefined
-                    answer[i].chain = Number(helper.gempad.convertChainToId(answer[i].chain))
-                    answer[i].launchpad = 'gempad'
-                    answer[i].source = 'gempad'
-                    answer[i].auditLink = sale.pool.auditLink
-                    answer[i].createdAt = Date.parse(sale.pool.createdAt)
-
-                    answer[i].baseSymbol = answer[i].baseTokenSymbol
-                    answer[i].telegramMemberCount = answer[i].tefc
-                    answer[i].telegramOnlineCount = answer[i].teoc
-                    delete answer[i].baseTokenSymbol
-                    delete answer[i].tefc
-                    delete answer[i].teoc
+                    let poolFromGem = await helper.gempad.getSingleSale(answer[i].presaleAddress, helper.gempad.convertChainToId(answer[i].chain), answer[i].poolType == "special" ? true : false)
+                    const formatted = helper.gempad.formatSingleSale(poolFromGem, answer[i])
+                    formattedSales.push(formatted)
+                    await new Promise(resolve => setTimeout(resolve, 1000))
                 }
                 
-                return answer
+                return formattedSales
             } catch (e) {
                 console.log(e)
             }
@@ -463,9 +554,45 @@ const helper = {
                 console.log(e)
             }
         },
+        formatSingleSale: (poolFromGem, poolFromLw) => {
+            try {
+                let sale = {
+                    'uniqueKey': poolFromLw.presaleAddress,
+                    'launchpad': 'gempad',
+                    'source': 'gempad',
+                    'launchpads': ['GemPad'],
+                    'presaleAddress': poolFromLw.presaleAddress,
+                    'presaleLink': poolFromLw.presaleLink,
+                    'chains': [helper.gempad.formatChainString(poolFromLw.chain)],
+                    'startTime': poolFromLw.startTime,
+                    'endTime': poolFromLw.endTime,
+                    'softCap': poolFromLw.softCap,
+                    'hardCap': poolFromLw.hardCap,
+                    'saleToken': poolFromLw.saleToken,
+                    'kyc': poolFromLw.kyc,
+                    'audit': poolFromLw.audit,
+                    'telegramLink': poolFromLw.telegramLink,
+                    'twitterLink': poolFromLw.twitterLink,
+                    'websiteLink': poolFromLw.websiteLink,
+                    'status': poolFromLw.status,
+                    'tokenSymbol': poolFromLw.tokenSymbol,
+                    'tokenName': poolFromLw.tokenName,
+                    'baseSymbol': poolFromLw.baseTokenSymbol,
+                    'websiteLink': poolFromGem.pool.ipfs ? poolFromGem.pool.ipfs.website : undefined,
+                    'submittedDescription': poolFromGem.pool.ipfs ? poolFromGem.pool.ipfs.description : undefined,
+                    'githubLink': poolFromGem.pool.ipfs ? poolFromGem.pool.ipfs.github : undefined,
+                    'logoLink': poolFromGem.pool.ipfs ? poolFromGem.pool.ipfs.logo : undefined,
+                    'auditLink': poolFromGem.pool.auditLink,
+                    'createdAt': Date.parse(poolFromGem.pool.createdAt)
+                }
+                return sale
+            } catch (e) {
+                console.log(e)
+            }
+        },
         statusUpdate: async () => {
             try {
-                let nonClosedFromDb= await helper.db.getNonClosedBySource('gempad')
+                let nonClosedFromDb = await helper.db.getNonClosedBySource('gempad')
                 let nonClosedFromGemApi = await helper.gempad.getNonClosed()
                 let fromGemObject = helper.general.arrayToObject(nonClosedFromGemApi, 'presaleAddress')
 
@@ -476,9 +603,9 @@ const helper = {
                             await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': fromGemObject[nonClosedFromDb[i].presaleAddress].status})
                         }
                     } else { // not in gem api anymore (so either status = 2,3,4)
-                        let sale = await helper.gempad.getSingleSale(nonClosedFromDb[i].presaleAddress, helper.gempad.convertChainToId(nonClosedFromDb[i].chain), nonClosedFromDb[i].poolType == "special" ? true : false)
-                        console.log('not in api and status different', nonClosedFromDb[i], sale)                                                
-                        await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': sale.status})
+                        let poolFromLw = await helper.gempad.getPoolFromLw(nonClosedFromDb[i].presaleAddress)
+                        console.log('not in api and status different', nonClosedFromDb[i], poolFromLw)                                                
+                        await helper.db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': poolFromLw.status})
                     }
                 }
             } catch (e) {
@@ -490,10 +617,11 @@ const helper = {
                 const alreadyIncluded = await helper.db.getAllMinBySource('gempad')
                 const nonClosedFromGemApi = await helper.gempad.getNonClosed()
                 
-                const toInclude = nonClosedFromGemApi.filter(item => !alreadyIncluded.includes(item.presaleAddress))
-                console.log(toInclude)
-                if (toInclude.length > 0) {
-                    await helper.db.createListings(process.env.DB_COLL, toInclude)
+                const toInclude = nonClosedFromGemApi.filter(item => !alreadyIncluded.includes(item.presaleAddress) && item.audit && item.kyc)
+                const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
+                console.log(toIncludeWithAnalyzedFalse)
+                if (toIncludeWithAnalyzedFalse.length > 0) {
+                    // await helper.db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
                 }
             } catch (e) {
                 console.log(e)
