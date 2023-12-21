@@ -1,0 +1,3683 @@
+[
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/2hl5NPUtZLCaWHqEsCB8AT/004bc445fbd735465ee303dde3e313dd/01d804c4-30a6-4f7b-8291-36d146d39d44.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "SociaPol",
+        "audits": [
+            {
+                "id": "SociaPol - audit",
+                "name": "SociaPol - audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 1,
+            "score": 91.47,
+            "rankPercentile": 0.00008392077878482712,
+            "scoreCodeSecurity": 93.46,
+            "scoreCommunity": 81.86,
+            "scoreFundamental": 95,
+            "scoreOperation": 89.62
+        },
+        "id": "sociapol",
+        "tokenTickers": [
+            "SPOL"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-10-30T07:00:00.000Z",
+        "createdAt": "2023-10-06T07:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-10-13"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 1,
+            "score": 91.47,
+            "rankPercentile": 0.00008392077878482712,
+            "scoreCodeSecurity": 93.46,
+            "scoreCommunity": 81.86,
+            "scoreFundamental": 95,
+            "scoreOperation": 89.62
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/6NUacrOL6GllAxG96t4O66/1f3a005d9bcc13820a9cb397e09b91e4/aiiILnpg_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "EDU3Labs ",
+        "audits": [
+            {
+                "id": "edu3labs - audit",
+                "name": "edu3labs - audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 2,
+            "score": 91.01,
+            "rankPercentile": 0.00016784155756965425,
+            "scoreCodeSecurity": 87.22,
+            "scoreCommunity": 91.08,
+            "scoreFundamental": 92.97,
+            "scoreOperation": 94.15
+        },
+        "id": "edu3labs",
+        "tokenTickers": [],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-07-11T05:00:00.000Z",
+        "createdAt": "2023-05-18T07:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-07-21"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 2,
+            "score": 91.01,
+            "rankPercentile": 0.00016784155756965425,
+            "scoreCodeSecurity": 87.22,
+            "scoreCommunity": 91.08,
+            "scoreFundamental": 92.97,
+            "scoreOperation": 94.15
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/61l7uiDZCkVfNrRhnwGkaD/bcacd3a715240d5e997f186add8a498d/ajhjO1Bk_400x400__1_.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "C-Patex ",
+        "audits": [
+            {
+                "id": "C-patex",
+                "name": "C-patex"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 3,
+            "score": 90.62,
+            "rankPercentile": 0.00025176233635448137,
+            "scoreCodeSecurity": 91.27,
+            "scoreCommunity": 88.18,
+            "scoreFundamental": 88.22,
+            "scoreOperation": 93.58
+        },
+        "id": "c-patex",
+        "tokenTickers": [
+            "PATEX"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Silver"
+            },
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-07-10T05:00:00.000Z",
+        "createdAt": "2023-06-29T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Silver",
+            "adjudicationDate": "2023-09-07"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 3,
+            "score": 90.62,
+            "rankPercentile": 0.00025176233635448137,
+            "scoreCodeSecurity": 91.27,
+            "scoreCommunity": 88.18,
+            "scoreFundamental": 88.22,
+            "scoreOperation": 93.58
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1TRyrytIO18TYzXpo6ABJe/c789a62872e40e7ce0632b4bc8b18a3c/W_MD85bU_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Massa Labs ",
+        "audits": [
+            {
+                "id": "Massa",
+                "name": "Massa"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 4,
+            "score": 90.12,
+            "rankPercentile": 0.0003356831151393085,
+            "scoreCodeSecurity": 93.41,
+            "scoreCommunity": 91.49,
+            "scoreFundamental": 80.27,
+            "scoreOperation": 95
+        },
+        "id": "massa-labs",
+        "tokenTickers": [
+            "MASSA"
+        ],
+        "badges": [
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-06-22T05:00:00.000Z",
+        "createdAt": "2023-04-03T07:00:00.000Z",
+        "platforms": [
+            "Massa"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 4,
+            "score": 90.12,
+            "rankPercentile": 0.0003356831151393085,
+            "scoreCodeSecurity": 93.41,
+            "scoreCommunity": 91.49,
+            "scoreFundamental": 80.27,
+            "scoreOperation": 95
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/4xYlp6sLQD9GwfcO1mYJGb/21770337bd2144012647431a1ac137f7/jchung_intellax.io-audit_image-1659310875902-89668e88-559f-4401-bee1-7b5d6a2195ac.png",
+        "contentfulDarkModeLogo": null,
+        "name": "Intella X ",
+        "audits": [
+            {
+                "id": "Intella X (Time Lock Contracts)",
+                "name": "Intella X (Time Lock Contracts)"
+            },
+            {
+                "id": "Intella X - Audit ",
+                "name": "Intella X - Audit "
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 5,
+            "score": 90.1,
+            "rankPercentile": 0.0004196038939241356,
+            "scoreCodeSecurity": 93.02,
+            "scoreCommunity": 84.14,
+            "scoreFundamental": 93.17,
+            "scoreOperation": 85.62
+        },
+        "id": "intellax",
+        "tokenTickers": [
+            "IX"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-11-19T06:00:00.000Z",
+        "createdAt": "2022-07-28T06:00:00.000Z",
+        "platforms": [
+            "Polygon",
+            "Ethereum"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-08-15"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 5,
+            "score": 90.1,
+            "rankPercentile": 0.0004196038939241356,
+            "scoreCodeSecurity": 93.02,
+            "scoreCommunity": 84.14,
+            "scoreFundamental": 93.17,
+            "scoreOperation": 85.62
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3R2SQXyTz0lj4YIDR2bTym/281d9b883d62fd70208bdabc315bcb85/Apeiron.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "Apeiron",
+        "audits": [
+            {
+                "id": "ApeIron - Audit 3",
+                "name": "ApeIron - Audit 3"
+            },
+            {
+                "id": "Apeiron - Sanctuary Contract",
+                "name": "Apeiron - Sanctuary Contract"
+            },
+            {
+                "id": "ApeIron - Token Contract",
+                "name": "ApeIron - Token Contract"
+            },
+            {
+                "id": "Apeiron - Audit 1",
+                "name": "Apeiron - Audit 1"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 6,
+            "score": 89.32,
+            "rankPercentile": 0.0005035246727089627,
+            "scoreCodeSecurity": 90.56,
+            "scoreCommunity": 92.8,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 86.93
+        },
+        "id": "apeiron",
+        "tokenTickers": [
+            "APRS",
+            "ANIMA",
+            "RNGU"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Silver"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-04-27T07:00:00.000Z",
+        "createdAt": "2022-03-16T04:00:00.000Z",
+        "platforms": [
+            "Polygon"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Silver",
+            "adjudicationDate": "2022-04-28"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 6,
+            "score": 89.32,
+            "rankPercentile": 0.0005035246727089627,
+            "scoreCodeSecurity": 90.56,
+            "scoreCommunity": 92.8,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 86.93
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3HzxiJY1peeEEIyRwZYg25/538b449591570ed14de99ba4c975ba5e/gleFQ-V0_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Tenderize",
+        "audits": [
+            {
+                "id": "Tenderize",
+                "name": "Tenderize"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 7,
+            "score": 88.33,
+            "rankPercentile": 0.0005874454514937899,
+            "scoreCodeSecurity": 93.66,
+            "scoreCommunity": 79.45,
+            "scoreFundamental": 83.62,
+            "scoreOperation": 90.48
+        },
+        "id": "tenderize",
+        "tokenTickers": [
+            "WAGYU"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-04-12T05:00:00.000Z",
+        "createdAt": "2022-10-06T06:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "Arbitrum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 7,
+            "score": 88.33,
+            "rankPercentile": 0.0005874454514937899,
+            "scoreCodeSecurity": 93.66,
+            "scoreCommunity": 79.45,
+            "scoreFundamental": 83.62,
+            "scoreOperation": 90.48
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/4BdCVBIuMMKGf9ogsQ83bM/e83e1e6a765304cb631cd4abee490258/iUDu6-1W_400x400__1_.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Gala Music ",
+        "audits": [
+            {
+                "id": "Gala Music",
+                "name": "Gala Music"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 8,
+            "score": 88.2,
+            "rankPercentile": 0.000671366230278617,
+            "scoreCodeSecurity": 92.06,
+            "scoreCommunity": 93.18,
+            "scoreFundamental": 94.59,
+            "scoreOperation": 73.26
+        },
+        "id": "gala-music",
+        "tokenTickers": [
+            "MUSIC"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-12-07T08:00:00.000Z",
+        "createdAt": "2023-12-06T08:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-06-15"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 8,
+            "score": 88.2,
+            "rankPercentile": 0.000671366230278617,
+            "scoreCodeSecurity": 92.06,
+            "scoreCommunity": 93.18,
+            "scoreFundamental": 94.59,
+            "scoreOperation": 73.26
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/4pko9KRiQRl6mPBevL8LXY/56b9511c0f9cf7c0cdc147303c81eb7d/3026f9ef-1b4a-4f22-a4db-f1883b134920.png",
+        "contentfulDarkModeLogo": null,
+        "name": "Starkfinance",
+        "audits": [
+            {
+                "id": "Starkfinance",
+                "name": "Starkfinance"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 9,
+            "score": 87.86,
+            "rankPercentile": 0.0007552870090634441,
+            "scoreCodeSecurity": 90.98,
+            "scoreCommunity": 90.8,
+            "scoreFundamental": 85,
+            "scoreOperation": 85.15
+        },
+        "id": "starksport",
+        "tokenTickers": [
+            "SFN"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Bronze"
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-07-12T05:00:00.000Z",
+        "createdAt": "2023-05-30T07:00:00.000Z",
+        "platforms": [
+            "Stark"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Bronze",
+            "adjudicationDate": "2023-06-06"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 9,
+            "score": 87.86,
+            "rankPercentile": 0.0007552870090634441,
+            "scoreCodeSecurity": 90.98,
+            "scoreCommunity": 90.8,
+            "scoreFundamental": 85,
+            "scoreOperation": 85.15
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/4PpIYlsqPygv5k3aUpW6vY/2823575e0d577f0d39e6d8bd8ff4cb9f/SEX_htxs_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Shiba Memu",
+        "audits": [
+            {
+                "id": "Shiba Memu - Audit",
+                "name": "Shiba Memu - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 10,
+            "score": 87.67,
+            "rankPercentile": 0.0008392077878482712,
+            "scoreCodeSecurity": 92.53,
+            "scoreCommunity": 91.76,
+            "scoreFundamental": 85,
+            "scoreOperation": 81.76
+        },
+        "id": "shiba-memu",
+        "tokenTickers": [
+            "SHMU"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Bronze"
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-07-05T05:00:00.000Z",
+        "createdAt": "2023-06-15T07:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Bronze",
+            "adjudicationDate": "2023-07-13"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 10,
+            "score": 87.67,
+            "rankPercentile": 0.0008392077878482712,
+            "scoreCodeSecurity": 92.53,
+            "scoreCommunity": 91.76,
+            "scoreFundamental": 85,
+            "scoreOperation": 81.76
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/gWkEjyDDbFMuQKZPUcIRZ/522ed47bdf7ecd5ba802907745ef43eb/B-m35hQP_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Chancer ",
+        "audits": [
+            {
+                "id": "Chancer - Audit",
+                "name": "Chancer - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 11,
+            "score": 87.15,
+            "rankPercentile": 0.0009231285666330984,
+            "scoreCodeSecurity": 90.07,
+            "scoreCommunity": 92.61,
+            "scoreFundamental": 85,
+            "scoreOperation": 82.71
+        },
+        "id": "chancer",
+        "tokenTickers": [
+            "CHANCER"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Bronze"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-06-07T05:00:00.000Z",
+        "createdAt": "2023-06-07T05:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Bronze",
+            "adjudicationDate": "2023-06-15"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 11,
+            "score": 87.15,
+            "rankPercentile": 0.0009231285666330984,
+            "scoreCodeSecurity": 90.07,
+            "scoreCommunity": 92.61,
+            "scoreFundamental": 85,
+            "scoreOperation": 82.71
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/6LhMt79yzrp3QrnZKXp2Mi/788b06274113f111c0de064c6873a3cf/nZ2lEQhv_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Cumulus Encrypted Storage System ",
+        "audits": [
+            {
+                "id": "Cumulus Encrypted Storage System ( CESS )",
+                "name": "Cumulus Encrypted Storage System ( CESS )"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 12,
+            "score": 87.14,
+            "rankPercentile": 0.0010070493454179255,
+            "scoreCodeSecurity": 92.67,
+            "scoreCommunity": 92.03,
+            "scoreFundamental": 80,
+            "scoreOperation": 84.81
+        },
+        "id": "cumulus-encrypted-storage-system",
+        "tokenTickers": [
+            "CESS"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-07-12T05:00:00.000Z",
+        "createdAt": "2023-07-11T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 12,
+            "score": 87.14,
+            "rankPercentile": 0.0010070493454179255,
+            "scoreCodeSecurity": 92.67,
+            "scoreCommunity": 92.03,
+            "scoreFundamental": 80,
+            "scoreOperation": 84.81
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/57CuqDru4RiL2WMJ97yKMo/6ddbcb90e81310d8eef5da3181e2589e/telegram-cloud-photo-size-4-5863937803375722351-y-20231016-134402.jpg",
+        "contentfulDarkModeLogo": "https://images.ctfassets.net/jqfm0se0f03r/3a344nVWpY9JzZUQolylKT/292412d9d29b61d07206d25629ae47b6/telegram-cloud-photo-size-4-5863937803375722350-y-20231016-134402.jpg",
+        "name": "WINK ",
+        "audits": [
+            {
+                "id": "WINK - Audit",
+                "name": "WINK - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 13,
+            "score": 86.85,
+            "rankPercentile": 0.0010909701242027526,
+            "scoreCodeSecurity": 91.47,
+            "scoreCommunity": 82.72,
+            "scoreFundamental": 90,
+            "scoreOperation": 78.99
+        },
+        "id": "wink",
+        "tokenTickers": [
+            "WINK"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-10-12T16:00:00.000Z",
+        "createdAt": "2023-10-08T16:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-11-22"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 13,
+            "score": 86.85,
+            "rankPercentile": 0.0010909701242027526,
+            "scoreCodeSecurity": 91.47,
+            "scoreCommunity": 82.72,
+            "scoreFundamental": 90,
+            "scoreOperation": 78.99
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1Bk5iT4iCl5Zp2MgpzHnXR/101de6ef6670f604adc4afe06b1ae0f5/vjqrzgMM3-KNvRFrk4Orkr8v6yyv8tGWDESBNV02L47LureNsKE51P5ty9eWlL7li0T9jCEHVINhYzxfDLfdoEWiNZBbzXpdRHo_ONXJDUZ3fyimdHMpQF1ufHDc.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Metabit",
+        "audits": [
+            {
+                "id": "Metabit",
+                "name": "Metabit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 14,
+            "score": 86.81,
+            "rankPercentile": 0.0011748909029875797,
+            "scoreCodeSecurity": 91.28,
+            "scoreCommunity": 91.51,
+            "scoreFundamental": 80,
+            "scoreOperation": 85.7
+        },
+        "id": "metabit",
+        "tokenTickers": [
+            "BMTC"
+        ],
+        "badges": [
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-04-17T07:00:00.000Z",
+        "createdAt": "2023-03-29T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 14,
+            "score": 86.81,
+            "rankPercentile": 0.0011748909029875797,
+            "scoreCodeSecurity": 91.28,
+            "scoreCommunity": 91.51,
+            "scoreFundamental": 80,
+            "scoreOperation": 85.7
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/6I4css1u2BnvRvzJB0hgJV/c3b009a703f01365271cf0a53d40bbd5/logo-full-2f97fefe.png",
+        "contentfulDarkModeLogo": null,
+        "name": "AiMalls ",
+        "audits": [
+            {
+                "id": "Aimalls - Audit",
+                "name": "Aimalls - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 15,
+            "score": 86.78,
+            "rankPercentile": 0.0012588116817724068,
+            "scoreCodeSecurity": 76.99,
+            "scoreCommunity": 92.5,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 95.92
+        },
+        "id": "aimalls",
+        "tokenTickers": [
+            "AIT"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Silver"
+            },
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-08-31T05:00:00.000Z",
+        "createdAt": "2023-08-14T07:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Silver",
+            "adjudicationDate": "2023-10-03"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": false,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 15,
+            "score": 86.78,
+            "rankPercentile": 0.0012588116817724068,
+            "scoreCodeSecurity": 76.99,
+            "scoreCommunity": 92.5,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 95.92
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/54XWF8bNnm7iQubb6JXDY/a0de52efce7bff5b3e9ff54c3acdd327/pmB_gZjF_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Me3 Wallet",
+        "audits": [
+            {
+                "id": "avarta",
+                "name": "Avarta"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 16,
+            "score": 86.58,
+            "rankPercentile": 0.001342732460557234,
+            "scoreCodeSecurity": 92,
+            "scoreCommunity": 91.89,
+            "scoreFundamental": 75,
+            "scoreOperation": 89.07
+        },
+        "id": "avarta",
+        "tokenTickers": [],
+        "badges": [
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-01-21T05:00:00.000Z",
+        "createdAt": "2021-11-20T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 16,
+            "score": 86.58,
+            "rankPercentile": 0.001342732460557234,
+            "scoreCodeSecurity": 92,
+            "scoreCommunity": 91.89,
+            "scoreFundamental": 75,
+            "scoreOperation": 89.07
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1VuDWM9a7IvPL4jVxBPgrP/318866acd41a672119ea939c0bcc2f39/uuKPW8Gu_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "MasterDEX",
+        "audits": [
+            {
+                "id": "Masterdex ",
+                "name": "Masterdex "
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 17,
+            "score": 85.1,
+            "rankPercentile": 0.001426653239342061,
+            "scoreCodeSecurity": 90.69,
+            "scoreCommunity": 92.07,
+            "scoreFundamental": 80,
+            "scoreOperation": 79.41
+        },
+        "id": "masterdex",
+        "tokenTickers": [
+            "MDEX"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-10-19T07:00:00.000Z",
+        "createdAt": "2023-09-24T16:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 17,
+            "score": 85.1,
+            "rankPercentile": 0.001426653239342061,
+            "scoreCodeSecurity": 90.69,
+            "scoreCommunity": 92.07,
+            "scoreFundamental": 80,
+            "scoreOperation": 79.41
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3RXj72bV6M2OPE4yVDIHA4/a2162be891c82feb2d0a0996f743ec22/NEWSLOGO.PNG",
+        "contentfulDarkModeLogo": null,
+        "name": "Shopcek",
+        "audits": [
+            {
+                "id": "ShopCek",
+                "name": "ShopCek"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 18,
+            "score": 84.97,
+            "rankPercentile": 0.0015105740181268882,
+            "scoreCodeSecurity": 91.8,
+            "scoreCommunity": 81.17,
+            "scoreFundamental": 80,
+            "scoreOperation": 82.79
+        },
+        "id": "shopcek",
+        "tokenTickers": [
+            "SHPC"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-11-03T07:00:00.000Z",
+        "createdAt": "2023-05-25T07:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 18,
+            "score": 84.97,
+            "rankPercentile": 0.0015105740181268882,
+            "scoreCodeSecurity": 91.8,
+            "scoreCommunity": 81.17,
+            "scoreFundamental": 80,
+            "scoreOperation": 82.79
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1Jk3Rm6fdp2CJMqpJLm1cI/e0af9009a4778adcfdc4c58c055e8c76/6459f5e3ef42078172db40d8_ais_logo-p-500.png",
+        "contentfulDarkModeLogo": null,
+        "name": "AI Society",
+        "audits": [
+            {
+                "id": "AI Society - Audit",
+                "name": "AI Society - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 19,
+            "score": 84.86,
+            "rankPercentile": 0.0015944947969117153,
+            "scoreCodeSecurity": 90.47,
+            "scoreCommunity": 88.95,
+            "scoreFundamental": 80,
+            "scoreOperation": 80.32
+        },
+        "id": "ai-society",
+        "tokenTickers": [
+            "AIS"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-08-24T16:00:00.000Z",
+        "createdAt": "2023-08-21T06:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "BSC"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 19,
+            "score": 84.86,
+            "rankPercentile": 0.0015944947969117153,
+            "scoreCodeSecurity": 90.47,
+            "scoreCommunity": 88.95,
+            "scoreFundamental": 80,
+            "scoreOperation": 80.32
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3LSezAIIdqc2omy8fXNLuH/b992c9d2c2167020db7feb65c308623b/8BcYdyRU_400x400.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "Metahollywood",
+        "audits": [
+            {
+                "id": "Metahollywood",
+                "name": "Metahollywood"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 20,
+            "score": 84.53,
+            "rankPercentile": 0.0016784155756965425,
+            "scoreCodeSecurity": 89.19,
+            "scoreCommunity": 76.06,
+            "scoreFundamental": 80,
+            "scoreOperation": 87.23
+        },
+        "id": "metahollywood",
+        "tokenTickers": [
+            "HWOOD"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-04-11T07:00:00.000Z",
+        "createdAt": "2022-04-11T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 20,
+            "score": 84.53,
+            "rankPercentile": 0.0016784155756965425,
+            "scoreCodeSecurity": 89.19,
+            "scoreCommunity": 76.06,
+            "scoreFundamental": 80,
+            "scoreOperation": 87.23
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/2shHYtdhPxdcLkRDyPg7go/f97b6270d20cffd3a0de0eefb183b1cf/mlP_xmm__400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "SpaceCatch",
+        "audits": [
+            {
+                "id": "CatchToken",
+                "name": "CatchToken"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 21,
+            "score": 84.22,
+            "rankPercentile": 0.0017623363544813696,
+            "scoreCodeSecurity": 89.49,
+            "scoreCommunity": 94.89,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 73.72
+        },
+        "id": "spacecatch",
+        "tokenTickers": [
+            "CATCH"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-12-06T16:00:00.000Z",
+        "createdAt": "2023-11-29T16:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 21,
+            "score": 84.22,
+            "rankPercentile": 0.0017623363544813696,
+            "scoreCodeSecurity": 89.49,
+            "scoreCommunity": 94.89,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 73.72
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/7ak4it21nDFyXovdWVfSHg/c25333c0bc153de150b1fc42a0cd4099/photo_2023-09-30_00-41-35.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "RepubliK ",
+        "audits": [
+            {
+                "id": "Republik - Audit 1",
+                "name": null
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 22,
+            "score": 83.57,
+            "rankPercentile": 0.0018462571332661967,
+            "scoreCodeSecurity": 90.38,
+            "scoreCommunity": 95.39,
+            "scoreFundamental": 78.3,
+            "scoreOperation": 73.94
+        },
+        "id": "republik",
+        "tokenTickers": [
+            "RPK"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": null,
+        "createdAt": "2023-10-18T16:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 22,
+            "score": 83.57,
+            "rankPercentile": 0.0018462571332661967,
+            "scoreCodeSecurity": 90.38,
+            "scoreCommunity": 95.39,
+            "scoreFundamental": 78.3,
+            "scoreOperation": 73.94
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/7kRK7jc4ZfRrNz22da0heR/be63db85cf7251815dd1f5aa3f65bb1f/image-20220325-020603.png",
+        "contentfulDarkModeLogo": null,
+        "name": "Sonet Token ",
+        "audits": [
+            {
+                "id": "Sonet ",
+                "name": "Sonet "
+            },
+            {
+                "id": "Sonet - 2",
+                "name": "Sonet "
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 23,
+            "score": 83.13,
+            "rankPercentile": 0.0019301779120510238,
+            "scoreCodeSecurity": 80.33,
+            "scoreCommunity": 70.06,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 87.88
+        },
+        "id": "sonet-token",
+        "tokenTickers": [
+            "SON"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Silver"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-04-20T07:00:00.000Z",
+        "createdAt": "2022-03-24T07:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "Polygon",
+            "TON"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Silver",
+            "adjudicationDate": "2022-05-04"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 23,
+            "score": 83.13,
+            "rankPercentile": 0.0019301779120510238,
+            "scoreCodeSecurity": 80.33,
+            "scoreCommunity": 70.06,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 87.88
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/EILQbckpKgawrQaooY9rQ/c08c0231dd4b6949d667fdaa66b6e58f/WqJbpQAw_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Propbase",
+        "audits": [
+            {
+                "id": "Propbase Token",
+                "name": "Propbase Token"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 24,
+            "score": 83.12,
+            "rankPercentile": 0.002014098690835851,
+            "scoreCodeSecurity": 90.53,
+            "scoreCommunity": 94.6,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 67.99
+        },
+        "id": "propbase",
+        "tokenTickers": [
+            "PROPS"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-11-06T16:00:00.000Z",
+        "createdAt": "2023-10-23T07:00:00.000Z",
+        "platforms": [
+            "Aptos"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 24,
+            "score": 83.12,
+            "rankPercentile": 0.002014098690835851,
+            "scoreCodeSecurity": 90.53,
+            "scoreCommunity": 94.6,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 67.99
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/4G4kqtAFabvYiyYV5OhVN7/b0d8abc5f5e7ae36618154ef13e31882/Estatex.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "EstateX ",
+        "audits": [
+            {
+                "id": "EstateX",
+                "name": "EstateX"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 25,
+            "score": 83.06,
+            "rankPercentile": 0.0020980194696206783,
+            "scoreCodeSecurity": 91.35,
+            "scoreCommunity": 94.36,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 60
+        },
+        "id": "estatex",
+        "tokenTickers": [
+            "ESX"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Silver"
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-08-16T07:00:00.000Z",
+        "createdAt": "2022-06-28T06:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Silver",
+            "adjudicationDate": "2023-09-08"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 25,
+            "score": 83.06,
+            "rankPercentile": 0.0020980194696206783,
+            "scoreCodeSecurity": 91.35,
+            "scoreCommunity": 94.36,
+            "scoreFundamental": 88.33,
+            "scoreOperation": 60
+        }
+    },
+    {
+        "__typename": "LeaderboardNonClientProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1eKh8z6t9VSKnGRUbpEPNB/55f5ba22f7a1a4cdefdba30cd8d94c42/nlJtmWT1_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Sablier ",
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 26,
+            "score": 83,
+            "rankPercentile": 0.002181940248405505,
+            "scoreCodeSecurity": 76.22,
+            "scoreCommunity": 95,
+            "scoreFundamental": 47.57,
+            "scoreOperation": 95
+        },
+        "id": "sablier",
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-04-26T13:27:48.865Z",
+        "platforms": [
+            "Arbitrum",
+            "Ethereum",
+            "Avalanche",
+            "BSC",
+            "Polygon",
+            "Optimism"
+        ],
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 26,
+            "score": 83,
+            "rankPercentile": 0.002181940248405505,
+            "scoreCodeSecurity": 76.22,
+            "scoreCommunity": 95,
+            "scoreFundamental": 47.57,
+            "scoreOperation": 95
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3hyYmU0qe6Mgq8GF9vTrcO/29f96bf341025244bb5531bd84211b54/ldOdlZgm_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Rune",
+        "audits": [
+            {
+                "id": "Rune",
+                "name": "Rune"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 27,
+            "score": 82.95,
+            "rankPercentile": 0.0022658610271903325,
+            "scoreCodeSecurity": 90.36,
+            "scoreCommunity": 56.85,
+            "scoreFundamental": 82.78,
+            "scoreOperation": 85.8
+        },
+        "id": "rune",
+        "tokenTickers": [],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Bronze"
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-09-14T16:00:00.000Z",
+        "createdAt": "2023-08-02T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Bronze",
+            "adjudicationDate": "2023-09-07"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 27,
+            "score": 82.95,
+            "rankPercentile": 0.0022658610271903325,
+            "scoreCodeSecurity": 90.36,
+            "scoreCommunity": 56.85,
+            "scoreFundamental": 82.78,
+            "scoreOperation": 85.8
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1qjVjPSzZdQJzsCDE3USo0/1c6ac64ff9aa7ade00383a1de64af94a/KGuANJq-_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Terraport",
+        "audits": [
+            {
+                "id": "Terraport - Audit",
+                "name": "Terraport - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 28,
+            "score": 82.85,
+            "rankPercentile": 0.0023497818059751594,
+            "scoreCodeSecurity": 82.2,
+            "scoreCommunity": 81.04,
+            "scoreFundamental": 84.26,
+            "scoreOperation": 86.19
+        },
+        "id": "terraport",
+        "tokenTickers": [
+            "TERRA"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-12-12T17:00:00.000Z",
+        "createdAt": "2023-04-13T07:00:00.000Z",
+        "platforms": [
+            "Terra"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-05-31"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 28,
+            "score": 82.85,
+            "rankPercentile": 0.0023497818059751594,
+            "scoreCodeSecurity": 82.2,
+            "scoreCommunity": 81.04,
+            "scoreFundamental": 84.26,
+            "scoreOperation": 86.19
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/2ZLyZ0pfTqWS8gzK3z6WvF/854f9afef7d855ba48c792e3a343b3e2/vniwZbdk_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Guardians of the Ball ",
+        "audits": [
+            {
+                "id": "Guardians of the Ball - GOBAL OTC Sales and Marketplace Alpha",
+                "name": "Guardians of the Ball - GOBAL OTC Sales and Marketplace Alpha"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 29,
+            "score": 82.71,
+            "rankPercentile": 0.002433702584759987,
+            "scoreCodeSecurity": 90.1,
+            "scoreCommunity": 61.9,
+            "scoreFundamental": 90,
+            "scoreOperation": 74.73
+        },
+        "id": "guardians-of-the-ball",
+        "tokenTickers": [
+            "GOBAL"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-10-25T16:00:00.000Z",
+        "createdAt": "2023-10-12T07:00:00.000Z",
+        "platforms": [
+            "Polygon"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-10-23"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 29,
+            "score": 82.71,
+            "rankPercentile": 0.002433702584759987,
+            "scoreCodeSecurity": 90.1,
+            "scoreCommunity": 61.9,
+            "scoreFundamental": 90,
+            "scoreOperation": 74.73
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/6M2CYIT2GpiJrDuVmkcIEG/3c2f88902e1b4819d5065e306deed121/ZuhWg4Ht_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Meta Plus Token ",
+        "audits": [
+            {
+                "id": "Metaplustoken - Audit",
+                "name": "Metaplustoken - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 30,
+            "score": 82.61,
+            "rankPercentile": 0.0025176233635448137,
+            "scoreCodeSecurity": 90.69,
+            "scoreCommunity": 72.44,
+            "scoreFundamental": 75,
+            "scoreOperation": 84.77
+        },
+        "id": "meta-plus-token",
+        "tokenTickers": [
+            "MTS"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Bronze"
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-10-25T16:00:00.000Z",
+        "createdAt": "2023-10-11T07:00:00.000Z",
+        "platforms": [
+            "Polygon"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Bronze",
+            "adjudicationDate": "2023-11-03"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 30,
+            "score": 82.61,
+            "rankPercentile": 0.0025176233635448137,
+            "scoreCodeSecurity": 90.69,
+            "scoreCommunity": 72.44,
+            "scoreFundamental": 75,
+            "scoreOperation": 84.77
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/6gydg7NiBVs3w4VBbI1N4N/68c924decf9b514bf6f92242b801a231/i8mcWCEj_400x400.png",
+        "contentfulDarkModeLogo": null,
+        "name": "ReHold",
+        "audits": [
+            {
+                "id": "ReHold",
+                "name": "ReHold"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 31,
+            "score": 82.56,
+            "rankPercentile": 0.002601544142329641,
+            "scoreCodeSecurity": 93.15,
+            "scoreCommunity": 85.76,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 66.5
+        },
+        "id": "rehold",
+        "tokenTickers": [
+            "RED",
+            "REDY"
+        ],
+        "badges": [
+            {
+                "id": "bounty",
+                "name": "Active Bounty",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-07-17T05:00:00.000Z",
+        "createdAt": "2023-06-26T07:00:00.000Z",
+        "platforms": [
+            "BSC",
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 31,
+            "score": 82.56,
+            "rankPercentile": 0.002601544142329641,
+            "scoreCodeSecurity": 93.15,
+            "scoreCommunity": 85.76,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 66.5
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/6rrU4qdsE7tYjpn5FDfaS7/b0e9426c1a9fc1c3470fc5bc61f9c05c/contact_blockearth.io-audit_image-1653640046793-3cb42178-0dfb-411f-a7d0-a419b1f19385.png",
+        "contentfulDarkModeLogo": null,
+        "name": "Blockearth",
+        "audits": [
+            {
+                "id": "Blockearth",
+                "name": "Blockearth"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 32,
+            "score": 82.47,
+            "rankPercentile": 0.002685464921114468,
+            "scoreCodeSecurity": 90.87,
+            "scoreCommunity": 57.24,
+            "scoreFundamental": 80,
+            "scoreOperation": 86.04
+        },
+        "id": "blockearth",
+        "tokenTickers": [
+            "BLET"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-05-27T07:00:00.000Z",
+        "createdAt": "2022-05-27T07:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 32,
+            "score": 82.47,
+            "rankPercentile": 0.002685464921114468,
+            "scoreCodeSecurity": 90.87,
+            "scoreCommunity": 57.24,
+            "scoreFundamental": 80,
+            "scoreOperation": 86.04
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/VAGfEM0NXeCRnYCPRRtKm/a2f5afa05046cfe498722735b46dead7/LvgOGFF9_400x400.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "OneTo11",
+        "audits": [
+            {
+                "id": "Oneto11.io",
+                "name": "Oneto11.io"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 33,
+            "score": 82.44,
+            "rankPercentile": 0.0027693856998992953,
+            "scoreCodeSecurity": 84.8,
+            "scoreCommunity": 89.59,
+            "scoreFundamental": 80,
+            "scoreOperation": 78.23
+        },
+        "id": "oneto11",
+        "tokenTickers": [],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-03-29T04:00:00.000Z",
+        "createdAt": "2022-02-08T08:00:00.000Z",
+        "platforms": [
+            "Polygon"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 33,
+            "score": 82.44,
+            "rankPercentile": 0.0027693856998992953,
+            "scoreCodeSecurity": 84.8,
+            "scoreCommunity": 89.59,
+            "scoreFundamental": 80,
+            "scoreOperation": 78.23
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/sAanUH6coHE3icBUc2JCj/0336cf0b3578d09c0006eaeddc6c9cd2/rrcZCkd2_400x400.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "CeluvPlay",
+        "audits": [
+            {
+                "id": "CeluvPlay",
+                "name": "CeluvPlay"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 34,
+            "score": 82.32,
+            "rankPercentile": 0.002853306478684122,
+            "scoreCodeSecurity": 91.51,
+            "scoreCommunity": 90.45,
+            "scoreFundamental": 67.5,
+            "scoreOperation": 81.71
+        },
+        "id": "celuvplay",
+        "tokenTickers": [
+            "CELB",
+            "CLEA",
+            "COCO"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-08-19T05:00:00.000Z",
+        "createdAt": "2022-08-12T07:00:00.000Z",
+        "platforms": [
+            "Polygon"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 34,
+            "score": 82.32,
+            "rankPercentile": 0.002853306478684122,
+            "scoreCodeSecurity": 91.51,
+            "scoreCommunity": 90.45,
+            "scoreFundamental": 67.5,
+            "scoreOperation": 81.71
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/lxz513fE29dmb2IK3l4Dj/b7b6f39baa90fcf74cacb9a5351dd874/MEDWYmAS_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Crypto Wallet",
+        "audits": [
+            {
+                "id": "CryptowalletApp - Audit",
+                "name": "CryptowalletApp - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 35,
+            "score": 82.3,
+            "rankPercentile": 0.0029372272574689495,
+            "scoreCodeSecurity": 78.87,
+            "scoreCommunity": 88.56,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 84.05
+        },
+        "id": "crypto-wallet",
+        "tokenTickers": [
+            "SPEND"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-08-03T05:00:00.000Z",
+        "createdAt": "2023-06-05T05:00:00.000Z",
+        "platforms": [
+            "BSC"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 35,
+            "score": 82.3,
+            "rankPercentile": 0.0029372272574689495,
+            "scoreCodeSecurity": 78.87,
+            "scoreCommunity": 88.56,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 84.05
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3jt3yquQjB46INraUJvqJv/1962dd3c938d9efec5e779a466016407/lWLOS-K2_400x400.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "DeSyn Protocol",
+        "audits": [
+            {
+                "id": "DeSyn Protocol Ⅳ",
+                "name": "DeSyn Protocol Ⅳ"
+            },
+            {
+                "id": "DeSyn Protocol II",
+                "name": "DeSyn Protocol II"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 36,
+            "score": 82.05,
+            "rankPercentile": 0.0030211480362537764,
+            "scoreCodeSecurity": 75.43,
+            "scoreCommunity": 90.55,
+            "scoreFundamental": 80,
+            "scoreOperation": 89.33
+        },
+        "id": "desyn-protocol",
+        "tokenTickers": [
+            "DSN"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-01-18T06:00:00.000Z",
+        "createdAt": "2022-06-20T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 36,
+            "score": 82.05,
+            "rankPercentile": 0.0030211480362537764,
+            "scoreCodeSecurity": 75.43,
+            "scoreCommunity": 90.55,
+            "scoreFundamental": 80,
+            "scoreOperation": 89.33
+        }
+    },
+    {
+        "__typename": "LeaderboardNonClientProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/NFLfr20SV9OtWtfe4ajgP/0f18f700213edb34af301f3f24ee8bbe/AdjOT30H_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Brahma",
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 37,
+            "score": 82,
+            "rankPercentile": 0.0031050688150386038,
+            "scoreCodeSecurity": 73.91,
+            "scoreCommunity": 95,
+            "scoreFundamental": 45.41,
+            "scoreOperation": 95
+        },
+        "id": "brahma",
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-04-26T13:13:09.107Z",
+        "platforms": [
+            "Ethereum",
+            "Polygon"
+        ],
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 37,
+            "score": 82,
+            "rankPercentile": 0.0031050688150386038,
+            "scoreCodeSecurity": 73.91,
+            "scoreCommunity": 95,
+            "scoreFundamental": 45.41,
+            "scoreOperation": 95
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/2j8HE9qEOc6gVy5RI6PvIz/ecef800d40ebff7e27891e580c23502b/0Ewn5u_G_400x400.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "Bob eco ",
+        "audits": [
+            {
+                "id": "Bob Ecosystem (Audit 2)",
+                "name": "Bob Ecosystem (Audit 2)"
+            },
+            {
+                "id": "Bob eco",
+                "name": "Bob eco"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 38,
+            "score": 81.54,
+            "rankPercentile": 0.0031889895938234307,
+            "scoreCodeSecurity": 92.9,
+            "scoreCommunity": 69.66,
+            "scoreFundamental": 73.75,
+            "scoreOperation": 80.16
+        },
+        "id": "bob-eco",
+        "tokenTickers": [
+            "BOBC"
+        ],
+        "badges": [
+            {
+                "id": "contract-verification",
+                "name": "Verified Contract",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-05-23T05:00:00.000Z",
+        "createdAt": "2022-03-14T07:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "BSC",
+            "Avalanche",
+            "Polygon"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 38,
+            "score": 81.54,
+            "rankPercentile": 0.0031889895938234307,
+            "scoreCodeSecurity": 92.9,
+            "scoreCommunity": 69.66,
+            "scoreFundamental": 73.75,
+            "scoreOperation": 80.16
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/28lO1k8xZNbIQ3201qf1Fa/49de8546db116a25fe3dd8af271418ad/yVLbvTh1_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Zebacus ",
+        "audits": [
+            {
+                "id": "Ztocken",
+                "name": "Ztocken"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 39,
+            "score": 81.51,
+            "rankPercentile": 0.003272910372608258,
+            "scoreCodeSecurity": 88.92,
+            "scoreCommunity": 53.5,
+            "scoreFundamental": 80,
+            "scoreOperation": 86.82
+        },
+        "id": "zebacus",
+        "tokenTickers": [
+            "ZToken"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-04-27T05:00:00.000Z",
+        "createdAt": "2022-03-16T04:00:00.000Z",
+        "platforms": [
+            "BSC",
+            "Polygon"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 39,
+            "score": 81.51,
+            "rankPercentile": 0.003272910372608258,
+            "scoreCodeSecurity": 88.92,
+            "scoreCommunity": 53.5,
+            "scoreFundamental": 80,
+            "scoreOperation": 86.82
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/3KrGxsiFnhkMl8bSrAVpOU/135bc62e56863efa4516f62efc7c7475/pYWBx8Mv_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "bitsCrunch",
+        "audits": [
+            {
+                "id": "bitsCrunch",
+                "name": "bitsCrunch"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 40,
+            "score": 81.37,
+            "rankPercentile": 0.003356831151393085,
+            "scoreCodeSecurity": 74.61,
+            "scoreCommunity": 94.8,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 83.18
+        },
+        "id": "bitscrunch",
+        "tokenTickers": [
+            "BCUT"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-11-27T16:00:00.000Z",
+        "createdAt": "2023-09-07T07:00:00.000Z",
+        "platforms": [
+            "Polygon",
+            "Ethereum",
+            "BSC",
+            "Avalanche"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 40,
+            "score": 81.37,
+            "rankPercentile": 0.003356831151393085,
+            "scoreCodeSecurity": 74.61,
+            "scoreCommunity": 94.8,
+            "scoreFundamental": 82.22,
+            "scoreOperation": 83.18
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/MRCrG8saXBZqGyOqrfLYU/91a240010c406490515358a6c1daf1f4/nestedfinance-logo.png",
+        "contentfulDarkModeLogo": null,
+        "name": "Nested Finance",
+        "audits": [
+            {
+                "id": "Nested Finance",
+                "name": "Nested Finance"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 41,
+            "score": 80.89,
+            "rankPercentile": 0.0034407519301779123,
+            "scoreCodeSecurity": 90.29,
+            "scoreCommunity": 30,
+            "scoreFundamental": 83.71,
+            "scoreOperation": 90.08
+        },
+        "id": "nestedfinance",
+        "tokenTickers": [
+            "NST"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2021-07-17T00:00:00.000Z",
+        "createdAt": "2021-05-11T00:00:00.000Z",
+        "platforms": [
+            "Arbitrum",
+            "Avalanche",
+            "Ethereum",
+            "Polygon",
+            "BSC",
+            "Optimism"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 41,
+            "score": 80.89,
+            "rankPercentile": 0.0034407519301779123,
+            "scoreCodeSecurity": 90.29,
+            "scoreCommunity": 30,
+            "scoreFundamental": 83.71,
+            "scoreOperation": 90.08
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/2plMweL7mikps5v8fOAQJN/f0278b4ba266b855e920855c6b7e75b8/ecMS3gXH_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Coinsender",
+        "audits": [
+            {
+                "id": "Coinsender",
+                "name": "Coinsender"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 42,
+            "score": 80.75,
+            "rankPercentile": 0.003524672708962739,
+            "scoreCodeSecurity": 90.01,
+            "scoreCommunity": 76.98,
+            "scoreFundamental": 80,
+            "scoreOperation": 70.51
+        },
+        "id": "coinsender",
+        "tokenTickers": [
+            "CMP"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-08-22T07:00:00.000Z",
+        "createdAt": "2023-07-25T05:00:00.000Z",
+        "platforms": [
+            "Polygon",
+            "Ethereum",
+            "BSC",
+            "Fantom",
+            "Optimism",
+            "Arbitrum",
+            "Avalanche",
+            "Tron",
+            "zkSync",
+            "Harmony"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 42,
+            "score": 80.75,
+            "rankPercentile": 0.003524672708962739,
+            "scoreCodeSecurity": 90.01,
+            "scoreCommunity": 76.98,
+            "scoreFundamental": 80,
+            "scoreOperation": 70.51
+        }
+    },
+    {
+        "__typename": "LeaderboardNonClientProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/W7FYWQpApM7dXSCxor2MZ/f16d26da45d2e01a27111816c18ec805/zamSAerR_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "KiloEx",
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 43,
+            "score": 80.64,
+            "rankPercentile": 0.0036085934877475665,
+            "scoreCodeSecurity": 64.92,
+            "scoreCommunity": 90.29,
+            "scoreFundamental": 85,
+            "scoreOperation": 93.02
+        },
+        "id": "kiloex",
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-operation-score",
+                "name": "Top 10% Operation Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-11-09T10:32:15.638Z",
+        "platforms": [
+            "opBNB",
+            "BSC"
+        ],
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 43,
+            "score": 80.64,
+            "rankPercentile": 0.0036085934877475665,
+            "scoreCodeSecurity": 64.92,
+            "scoreCommunity": 90.29,
+            "scoreFundamental": 85,
+            "scoreOperation": 93.02
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1vTbNqRav9PkE5oMXmySXP/9f3f917cd1a124347fe5ab118b71d3db/image-20230531-122723.png",
+        "contentfulDarkModeLogo": null,
+        "name": "UBD Network",
+        "audits": [
+            {
+                "id": "UBD Network",
+                "name": "UBD Network"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 44,
+            "score": 80.15,
+            "rankPercentile": 0.0036925142665323934,
+            "scoreCodeSecurity": 92.25,
+            "scoreCommunity": 92.45,
+            "scoreFundamental": 57.5,
+            "scoreOperation": 81.97
+        },
+        "id": "ubd-network",
+        "tokenTickers": [
+            "UBDN"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "formal-verification-erc20",
+                "name": "Formal Verification",
+                "type": "Subscription",
+                "awardStatus": "bronze"
+            }
+        ],
+        "onboardedAt": "2023-07-17T05:00:00.000Z",
+        "createdAt": "2023-05-31T07:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 44,
+            "score": 80.15,
+            "rankPercentile": 0.0036925142665323934,
+            "scoreCodeSecurity": 92.25,
+            "scoreCommunity": 92.45,
+            "scoreFundamental": 57.5,
+            "scoreOperation": 81.97
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/5v35R4I2BwZsZstfBZqjGX/5add4a4172e4aff34c7959a2966d90a9/Screenshot_2023-04-11_at_11.23.13_AM.png",
+        "contentfulDarkModeLogo": null,
+        "name": "ESG Global ",
+        "audits": [
+            {
+                "id": "ESG Global",
+                "name": "ESG Global"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 45,
+            "score": 80,
+            "rankPercentile": 0.0037764350453172208,
+            "scoreCodeSecurity": 91.79,
+            "scoreCommunity": 86.84,
+            "scoreFundamental": 80,
+            "scoreOperation": 60.08
+        },
+        "id": "esg-global",
+        "tokenTickers": [
+            "RE"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-04-17T05:00:00.000Z",
+        "createdAt": "2023-04-11T05:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 45,
+            "score": 80,
+            "rankPercentile": 0.0037764350453172208,
+            "scoreCodeSecurity": 91.79,
+            "scoreCommunity": 86.84,
+            "scoreFundamental": 80,
+            "scoreOperation": 60.08
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/Rnu4H1TDmSmm9ZwG1Xoxk/6c3142c677999a1f45aae4336cdd559d/Metablze.jpeg",
+        "contentfulDarkModeLogo": null,
+        "name": "MetaBlaze",
+        "audits": [
+            {
+                "id": "MetaBlaze - MBLZ",
+                "name": "MetaBlaze - MBLZ"
+            },
+            {
+                "id": "MetaBlaze - MBLZ Token Contract",
+                "name": "MetaBlaze - MBLZ Token Contract"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 46,
+            "score": 79.86,
+            "rankPercentile": 0.0038603558241020477,
+            "scoreCodeSecurity": 72.18,
+            "scoreCommunity": 90.49,
+            "scoreFundamental": 87.54,
+            "scoreOperation": 76.83
+        },
+        "id": "metablaze",
+        "tokenTickers": [
+            "MBLZ"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Silver"
+            },
+            {
+                "id": "top-ten-percent-watched",
+                "name": "Top 10% Watchlisted",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2022-06-03T06:00:00.000Z",
+        "createdAt": "2022-02-21T05:00:00.000Z",
+        "platforms": [
+            "Ethereum"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Silver",
+            "adjudicationDate": "2022-05-18"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": null,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 46,
+            "score": 79.86,
+            "rankPercentile": 0.0038603558241020477,
+            "scoreCodeSecurity": 72.18,
+            "scoreCommunity": 90.49,
+            "scoreFundamental": 87.54,
+            "scoreOperation": 76.83
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/1rc3G3ZF6GDJWrXuAvup9N/8c318726bb586fb84df7caef68dc313f/YICxgI6l_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Artfi",
+        "audits": [
+            {
+                "id": "artfi",
+                "name": null
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 47,
+            "score": 79.82,
+            "rankPercentile": 0.003944276602886875,
+            "scoreCodeSecurity": 66.91,
+            "scoreCommunity": 93.89,
+            "scoreFundamental": 87.78,
+            "scoreOperation": 82.1
+        },
+        "id": "artfi",
+        "tokenTickers": [
+            "ARTFI"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": null,
+        "createdAt": "2023-08-04T07:00:00.000Z",
+        "platforms": [
+            "Polygon"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-10-30"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 47,
+            "score": 79.82,
+            "rankPercentile": 0.003944276602886875,
+            "scoreCodeSecurity": 66.91,
+            "scoreCommunity": 93.89,
+            "scoreFundamental": 87.78,
+            "scoreOperation": 82.1
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/5p0Ei9pWWNvjD70Ql3Juhp/ce855d28702fca21a7246b33ce8e9696/______2023-08-09_18.31.27.png",
+        "contentfulDarkModeLogo": "https://images.ctfassets.net/jqfm0se0f03r/5KmgbNVo9OJwGqLQAL91iI/f123d0baf211ecf2c274393d04ce2029/______2023-08-09_18.33.12.png",
+        "name": "Owlto Finance",
+        "audits": [
+            {
+                "id": "owlto finance",
+                "name": "owlto finance"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 48,
+            "score": 79.78,
+            "rankPercentile": 0.004028197381671702,
+            "scoreCodeSecurity": 92.93,
+            "scoreCommunity": 92.57,
+            "scoreFundamental": 47.78,
+            "scoreOperation": 90.16
+        },
+        "id": "owlto-finance",
+        "tokenTickers": [],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-community-score",
+                "name": "Top 10% Community Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-10-01T16:00:00.000Z",
+        "createdAt": "2023-08-08T07:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "Arbitrum"
+        ],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": false,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 48,
+            "score": 79.78,
+            "rankPercentile": 0.004028197381671702,
+            "scoreCodeSecurity": 92.93,
+            "scoreCommunity": 92.57,
+            "scoreFundamental": 47.78,
+            "scoreOperation": 90.16
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/2Vwo9XBnJQ0IQZEGyKfiYS/4b3d5efdd8c1932331b85aaa7daa1505/GaH47k09_400x400.jpg",
+        "contentfulDarkModeLogo": null,
+        "name": "Ecrox Chain",
+        "audits": [
+            {
+                "id": "Ecrox Chain - Audit",
+                "name": "Ecrox Chain - Audit"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 49,
+            "score": 79.28,
+            "rankPercentile": 0.004112118160456529,
+            "scoreCodeSecurity": 92.22,
+            "scoreCommunity": 69.35,
+            "scoreFundamental": 57.5,
+            "scoreOperation": 90.08
+        },
+        "id": "ecrox-chain",
+        "tokenTickers": [
+            "ECROX"
+        ],
+        "badges": [
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-code-security-score",
+                "name": "Top 10% Code Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-11-20T08:00:00.000Z",
+        "createdAt": "2023-10-30T07:00:00.000Z",
+        "platforms": [],
+        "kycAssessment": null,
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 49,
+            "score": 79.28,
+            "rankPercentile": 0.004112118160456529,
+            "scoreCodeSecurity": 92.22,
+            "scoreCommunity": 69.35,
+            "scoreFundamental": 57.5,
+            "scoreOperation": 90.08
+        }
+    },
+    {
+        "__typename": "LeaderboardProject",
+        "contentfulLogo": "https://images.ctfassets.net/jqfm0se0f03r/4KQXakVeu8ye6m53iz10q0/6dbf4282dc18c162c12cd6020e5bd4dc/image-20220913-150827.png",
+        "contentfulDarkModeLogo": null,
+        "name": "Brightpool",
+        "audits": [
+            {
+                "id": "Darkpool - private sale",
+                "name": "Darkpool - private sale"
+            }
+        ],
+        "securityScoreV3": {
+            "categoryRanks": [],
+            "rank": 50,
+            "score": 79.25,
+            "rankPercentile": 0.004196038939241357,
+            "scoreCodeSecurity": 73.32,
+            "scoreCommunity": 81.64,
+            "scoreFundamental": 90,
+            "scoreOperation": 74.54
+        },
+        "id": "brightpool",
+        "tokenTickers": [
+            "BRI"
+        ],
+        "badges": [
+            {
+                "id": "kyc",
+                "name": "CertiK KYC",
+                "type": "Subscription",
+                "awardStatus": "Gold"
+            },
+            {
+                "id": "skynet",
+                "name": "CertiK Skynet",
+                "type": "Subscription",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-security-score",
+                "name": "Top 10% Security Score",
+                "type": "Honor",
+                "awardStatus": null
+            },
+            {
+                "id": "top-ten-percent-fundamental-score",
+                "name": "Top 10% Fundamental Score",
+                "type": "Honor",
+                "awardStatus": null
+            }
+        ],
+        "onboardedAt": "2023-06-23T07:00:00.000Z",
+        "createdAt": "2022-07-01T05:00:00.000Z",
+        "platforms": [
+            "Ethereum",
+            "Arbitrum"
+        ],
+        "kycAssessment": {
+            "awardStatus": "Gold",
+            "adjudicationDate": "2023-06-05"
+        },
+        "projectTokenStatus": "PRE_LAUNCH",
+        "isExitScam": null,
+        "isSecurityScorePending": false,
+        "newSecurityScore": {
+            "categoryRanks": [],
+            "rank": 50,
+            "score": 79.25,
+            "rankPercentile": 0.004196038939241357,
+            "scoreCodeSecurity": 73.32,
+            "scoreCommunity": 81.64,
+            "scoreFundamental": 90,
+            "scoreOperation": 74.54
+        }
+    }
+]

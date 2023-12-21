@@ -3,6 +3,7 @@ const pink = require('./functions/pink')
 const gempad = require('./functions/gempad')
 const cryptorank = require('./functions/cryptorank')
 const certik = require('./functions/certik')
+const example = require('./other/certikBatch.json')
 
 const helper = {
     run: {
@@ -68,9 +69,11 @@ const helper = {
         },
         test : async () => {
             try {
-                const all = await helper.certik.getSingleHtml('rehold')
-                const links = helper.certik.parseHtml(all)
-                console.log(links)
+                // const all = await helper.db.getByCollection('certikRaw')
+                // const all = example.map(item => certik.formatUpcomingSingle(item))
+                // await helper.cryptorank.checkNew()
+                // const all = await helper.db.getByUniqueKey('0x3D764345d28620be530DbEc985f26Cc7de13f793')
+                // console.log(all)
             } catch (e) {
                 console.log(e)
             }

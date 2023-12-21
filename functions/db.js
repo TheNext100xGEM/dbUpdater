@@ -27,6 +27,19 @@ const db = {
             await client.close()
         }
     },
+    getByCollection: async (coll) => {
+        const uri = process.env.DB_URI
+        const client = new MongoClient(uri)
+        try {
+            await client.connect()
+            const raw = await client.db(process.env.DB_NAME).collection(coll).find().toArray()
+            return raw
+        } catch (e) {
+            console.log(e)
+        } finally {
+            await client.close()
+        }
+    },
     getNonClosed: async () => {
         const uri = process.env.DB_URI
         const client = new MongoClient(uri)

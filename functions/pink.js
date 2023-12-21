@@ -111,6 +111,7 @@ const pink = {
             createdAt: Date.parse(a.createdAt),
             poolType: a.pool.poolType,
             chain: a.chainId,
+            chains: [pink.formatChain(a.chainId)],
             status: pink.getStatus(a),
             telegramMemberCount: a.pool.telegramMemberCount,
             telegramOnlineCount: a.pool.telegramOnlineCount,
@@ -181,9 +182,9 @@ const pink = {
             
             const toInclude = nonClosedFromPinkApi.filter(item => !alreadyIncluded.includes(item.presaleAddress) && item.audit && item.kyc)
             const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
-            console.log(toIncludeWithAnalyzedFalse)
+            console.log(toIncludeWithAnalyzedFalse, toIncludeWithAnalyzedFalse.length)
             if (toIncludeWithAnalyzedFalse.length > 0) {
-                await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
+                // await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
             }
         } catch (e) {
             console.log(e)
