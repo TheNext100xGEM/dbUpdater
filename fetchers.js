@@ -74,6 +74,9 @@ const helper = {
                 // await helper.cryptorank.checkNew()
                 // const all = await helper.db.getByUniqueKey('0x3D764345d28620be530DbEc985f26Cc7de13f793')
                 // console.log(all)
+                // const html = await certik.getSingleHtml('mytheria')
+                // const parsed = certik.parseHtml(html)
+                // console.log(parsed)
             } catch (e) {
                 console.log(e)
             }

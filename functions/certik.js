@@ -77,38 +77,105 @@ const certik = {
             console.log(e)
         }
     },
+    parse: {
+        cleanWebsiteLink: (website) => {
+            try {
+                if(!website.startsWith('/') &&
+                !website.includes('scan')) 
+                {
+                    return website
+                } else {
+                    return undefined
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        status: (html) => {
+            try {
+                const $ = cheerio.load(html)
+                if ($('header').text().includes('Pre-Launch')) {
+                    return 0
+                } else {
+                    return 4
+                }
+            } catch (e) {
+                console.log(e)
+                return undefined
+            }
+        },
+        symbol: (html) => {
+            try {
+                const $ = cheerio.load(html)
+                const headerText = $('header').text()
+                const re = /\((\w+)\)/
+                const match = headerText.match(re)
+                if (match) {
+                    return match[1]
+                } else {
+                    return undefined
+                }
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        links: (html) => {
+            try {
+                const $ = cheerio.load(html)
+                const skynet = $('#skynet a')
+                const links = []
+                skynet.each((i, el) => {
+                    const link = $(el).attr('href')
+                    links.push(link)
+                })
+
+                const isolateAndCleanLink = (source, links) => {
+                    try {
+                        const raw = links.filter(item => item.includes(source))
+                        if (raw.length > 0) {
+                            return raw[0].replace('?utm_source=certik', '')
+                        } else {
+                            return undefined
+                        }
+                    } catch (e) {
+                        console.log(e)
+                    }
+                }
+
+                const parsedLinks = {
+                    websiteLink: certik.parse.cleanWebsiteLink(links[0]),
+                    twitterLink: isolateAndCleanLink('twitter', links),
+                    discordLink: isolateAndCleanLink('discord', links),
+                    telegramLink: isolateAndCleanLink('t.me', links),
+                    githubLink: isolateAndCleanLink('github', links),
+                }
+
+                return parsedLinks
+            } catch (e) {
+                console.log(e)
+                return {}
+            }
+        },
+    },
     parseHtml: (html) => {
         try {
             const $ = cheerio.load(html)
             const skynet = $('#skynet a')
-            const links = []
-            skynet.each((i, el) => {
-                const link = $(el).attr('href')
-                links.push(link)
-            })
-
-            const isolateAndCleanLink = (source, links) => {
-                try {
-                    const raw = links.filter(item => item.includes(source))
-                    if (raw.length > 0) {
-                        return raw[0].replace('?utm_source=certik', '')
-                    } else {
-                        return undefined
-                    }
-                } catch (e) {
-                    console.log(e)
+            if (skynet.length > 0) { // proxy to check if proper html received
+                const links = certik.parse.links(html)
+                const status = certik.parse.status(html)
+                const symbol = certik.parse.symbol(html)
+                
+                const parsed = {
+                    ...links,
+                    'status': status,
+                    'tokenSymbol': symbol,
                 }
-            }
 
-            const parsedData = {
-                websiteLink: links[0],
-                twitterLink: isolateAndCleanLink('twitter', links),
-                discordLink: isolateAndCleanLink('discord', links),
-                telegramLink: isolateAndCleanLink('t.me', links),
-                githubLink: isolateAndCleanLink('github', links),
+                return parsed                
+            } else {
+                return {}
             }
-
-            return parsedData
         } catch (e) {
             console.log(e)
         }
