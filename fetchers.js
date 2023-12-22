@@ -3,7 +3,6 @@ const pink = require('./functions/pink')
 const gempad = require('./functions/gempad')
 const cryptorank = require('./functions/cryptorank')
 const certik = require('./functions/certik')
-const example = require('./other/certikBatch.json')
 
 const helper = {
     run: {
@@ -69,14 +68,12 @@ const helper = {
         },
         test : async () => {
             try {
-                // const all = await helper.db.getByCollection('certikRaw')
-                // const all = example.map(item => certik.formatUpcomingSingle(item))
-                // await helper.cryptorank.checkNew()
-                // const all = await helper.db.getByUniqueKey('0x3D764345d28620be530DbEc985f26Cc7de13f793')
-                // console.log(all)
-                // const html = await certik.getSingleHtml('mytheria')
-                // const parsed = certik.parseHtml(html)
-                // console.log(parsed)
+                const all = await helper.db.getByCollection('certikRaw')
+                const unique = await certik.checkUnique(all.filter(item => item.websiteLink))
+                console.log(unique.length)
+                for (let i = 0; i < unique.length; i++) {
+                    // await db.updateListingOther('certikRaw', {'uniqueKey': unique[i].uniqueKey}, {'looksUnique': true, 'addedToProd': false})                    
+                }
             } catch (e) {
                 console.log(e)
             }
@@ -88,3 +85,5 @@ const helper = {
     cryptorank: cryptorank,
     certik: certik,
 }
+
+helper.run.test()

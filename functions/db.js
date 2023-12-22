@@ -91,6 +91,18 @@ const db = {
             await client.close()
         }
     },
+    updateListingOther: async (coll, index, data) => {
+        const uri = process.env.DB_URI
+        const client = new MongoClient(uri)
+        try {
+            await client.connect()
+            await client.db(process.env.DB_NAME).collection(coll).updateOne(index, {$set: data})
+        } catch (e) {
+            console.log(e)
+        } finally {
+            await client.close()
+        }
+    },
     getAllMinBySource: async (source) => {
         const uri = process.env.DB_URI
         const client = new MongoClient(uri)
@@ -99,6 +111,29 @@ const db = {
             const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find({'source': source}).project({'uniqueKey': 1, '_id': 0}).toArray()
 
             return all.map(item => item.uniqueKey)
+        } catch (e) {
+            console.log(e)
+        } finally {
+            await client.close()
+        }
+    },
+    getAllMinSocials: async () => {
+        const uri = process.env.DB_URI
+        const client = new MongoClient(uri)
+        try {
+            await client.connect()
+            const all = await client.db(process.env.DB_NAME).collection(process.env.DB_COLL).find().project({
+                'uniqueKey': 1,
+                '_id': 0,
+                'tokenName': 1,
+                'websiteLink': 1,
+                'twitterLink': 1,
+                'discordLink': 1,
+                'telegramLink': 1,
+                'githubLink': 1,
+            }).toArray()
+
+            return all
         } catch (e) {
             console.log(e)
         } finally {

@@ -1,6 +1,25 @@
 const cheerio = require('cheerio')
+const db = require('./db')
 
 const certik = {
+    checkUnique: async (launches) => {
+        try {
+            const socialsInDb = await db.getAllMinSocials()
+
+            // compare on name
+            const uniqueOnName = launches.filter(item => !socialsInDb.some(inDb => item.tokenName.toUpperCase() === inDb.tokenName.toUpperCase()))
+            console.log('name', launches.length, uniqueOnName.length)
+            // compare on website
+            const uniqueOnWeb = uniqueOnName.filter(item => item.websiteLink).filter(item => !socialsInDb.some(inDb => item.websiteLink === inDb.websiteLink))
+            console.log('web', uniqueOnName.length, uniqueOnWeb.length)
+            const uniqueOnTw = uniqueOnWeb.filter(item => item.twitterLink).filter(item => !socialsInDb.some(inDb => item.twitterLink === inDb.twitterLink))
+            console.log('tw', uniqueOnWeb.length, uniqueOnTw.length)
+
+            return uniqueOnTw
+        } catch (e) {
+            console.log(e)
+        }
+    },
     getUpcomingBatch: async (limit, skip) => { // {items: [...], page: {limit, total, hasMore}}
         try {
             let response = await fetch(`https://skynet.certik.com/api/leaderboard-all-projects/query-leaderboard-pre-launch-projects?limit=${limit}&skip=${skip}`)
