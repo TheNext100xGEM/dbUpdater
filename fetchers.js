@@ -85,5 +85,3 @@ const helper = {
     cryptorank: cryptorank,
     certik: certik,
 }
-
-helper.run.test()
