@@ -59,12 +59,12 @@ const dex = {
     },
     getSocialLinks: async (pair) => {
         try {
-            const token = await helperExtract.getAddress(pair)
-            const sourceCode = await helperExtract.getSourceCode(token)
-            const allLinks = helperExtract.getAllLinks(await sourceCode)
+            const token = await dex.getAddress(pair)
+            const sourceCode = await dex.getSourceCode(token)
+            const allLinks = dex.getAllLinks(await sourceCode)
             return {
-                tg: helperExtract.extractTelegram(allLinks),
-                tw: helperExtract.extractTwitter(allLinks)
+                tg: dex.extractTelegram(allLinks),
+                tw: dex.extractTwitter(allLinks)
             }
         } catch (e) {
             console.log(e)
