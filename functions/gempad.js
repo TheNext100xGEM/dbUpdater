@@ -165,7 +165,7 @@ const gempad = {
             const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
             console.log(toIncludeWithAnalyzedFalse)
             if (toIncludeWithAnalyzedFalse.length > 0) {
-                // await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
+                await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
             }
         } catch (e) {
             console.log(e)

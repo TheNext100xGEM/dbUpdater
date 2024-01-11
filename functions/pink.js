@@ -163,12 +163,12 @@ const pink = {
                 if (fromPinkObject[nonClosedFromDb[i].presaleAddress] !== undefined) { // still in pink api (so either status 0 or 1)
                     if (nonClosedFromDb[i].status !== fromPinkObject[nonClosedFromDb[i].presaleAddress].status) { // if status different
                         console.log('in api and status different', nonClosedFromDb[i], fromPinkObject[nonClosedFromDb[i].presaleAddress])
-                        // await db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': fromPinkObject[nonClosedFromDb[i].presaleAddress].status})
+                        await db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': fromPinkObject[nonClosedFromDb[i].presaleAddress].status})
                     }
                 } else { // not in pink api anymore (so either status = 2,3,4)
                     let sale = await pink.getSingleSale(nonClosedFromDb[i].presaleAddress)
                     console.log('not in api and status different', nonClosedFromDb[i], sale)
-                    // await db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': sale.status})
+                    await db.updateListing({'presaleAddress': nonClosedFromDb[i].presaleAddress}, {'status': sale.status})
                 }
             }
         } catch (e) {
@@ -184,7 +184,7 @@ const pink = {
             const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
             console.log(toIncludeWithAnalyzedFalse, toIncludeWithAnalyzedFalse.length)
             if (toIncludeWithAnalyzedFalse.length > 0) {
-                // await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
+                await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
             }
         } catch (e) {
             console.log(e)

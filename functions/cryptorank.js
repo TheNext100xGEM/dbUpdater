@@ -24,7 +24,7 @@ const cryptorank = {
                 method: 'POST',
             })
             let answer = await response.json()
-            // console.log(answer.data)
+            console.log(answer.data)
             let formatted = []
 
             for (let i = 0; i < answer.data.length; i++) {
@@ -115,12 +115,12 @@ const cryptorank = {
                 if (fromCRObject[nonClosedFromDb[i].uniqueKey] !== undefined) { // still in cryptorank api (so either status = 0,1)
                     if (nonClosedFromDb[i].status !== fromCRObject[nonClosedFromDb[i].uniqueKey].status) { // if status different
                         console.log('in api and status different', nonClosedFromDb[i], fromCRObject[nonClosedFromDb[i].uniqueKey])
-                        // await db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': fromCRObject[nonClosedFromDb[i].uniqueKey].status})
+                        await db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': fromCRObject[nonClosedFromDb[i].uniqueKey].status})
                     }
                 } else { // not in api anymore (so either status = 2,3,4)
                     let sale = await cryptorank.getSingle(cryptorank.getKeyFromUnique(nonClosedFromDb[i].uniqueKey))
                     console.log('not in api so status maybe different', nonClosedFromDb[i], sale.formatted)                                                
-                    // await db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': sale.formatted.status})
+                    await db.updateListing({'uniqueKey': nonClosedFromDb[i].uniqueKey}, {'status': sale.formatted.status})
                     await new Promise(resolve => setTimeout(resolve, 500))
                 }
             }
@@ -136,7 +136,7 @@ const cryptorank = {
             const toInclude = nonClosedFromCRApi.filter(item => !alreadyIncluded.includes(item.uniqueKey))
             console.log(toInclude)
             if (toInclude.length > 0) {
-                // await db.createListings(process.env.DB_COLL, toInclude)
+                await db.createListings(process.env.DB_COLL, toInclude)
             }
         } catch (e) {
             console.log(e)

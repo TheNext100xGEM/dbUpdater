@@ -68,12 +68,7 @@ const helper = {
         },
         test : async () => {
             try {
-                const all = await helper.db.getByCollection('certikRaw')
-                const unique = await certik.checkUnique(all.filter(item => item.websiteLink))
-                console.log(unique.length)
-                for (let i = 0; i < unique.length; i++) {
-                    // await db.updateListingOther('certikRaw', {'uniqueKey': unique[i].uniqueKey}, {'looksUnique': true, 'addedToProd': false})                    
-                }
+                
             } catch (e) {
                 console.log(e)
             }
