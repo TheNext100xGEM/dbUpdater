@@ -10,9 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "abort-controller": "^3.0.0",
     "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1",
     "extract-urls": "^1.4.0",
-    "mongodb": "^6.3.0"
+    "http-proxy-agent": "^7.0.0",
+    "jsdom": "^24.0.0",
+    "mongodb": "^6.3.0",
+    "node-fetch": "^2.6.6"
   }
 }
