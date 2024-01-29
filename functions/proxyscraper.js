@@ -28,7 +28,7 @@ function chunkArray(array, size) {
 function testProxy(proxy) {
     return new Promise((resolve, reject) => {
         const [proxyHost, proxyPort] = proxy.split(':');
-        const targetUrl = 'http://example.com'; // Replace with your target URL
+        const targetUrl = 'https://cryptorank.io/'; // Replace with your target URL
 
         const requestOptions = {
             host: proxyHost,
