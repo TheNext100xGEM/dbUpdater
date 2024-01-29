@@ -34,6 +34,7 @@ function testProxy(proxy) {
             host: proxyHost,
             port: parseInt(proxyPort, 10),
             path: targetUrl,
+            timeout: 10000,
             headers: {
                 Host: new URL(targetUrl).hostname
             }
