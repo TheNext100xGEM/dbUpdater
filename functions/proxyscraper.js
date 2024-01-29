@@ -179,15 +179,14 @@ async function updateProxies(){
     return validProxies
     
 }
-
+/*
 async function test(){
 
     const res = await providers[5]()
     console.log(res)
 }
 
-
-test()
+*/
 
 module.exports = {
     updateProxies
