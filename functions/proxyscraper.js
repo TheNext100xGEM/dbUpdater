@@ -212,7 +212,7 @@ async function updateProxies(){
     return validProxies
     
 }
-
+/*
 async function test(){
 
     const res = await testProxy('34.165.22.141:3128')
@@ -220,7 +220,7 @@ async function test(){
 }
 
 test()
-
+*/
 module.exports = {
     updateProxies
 }
