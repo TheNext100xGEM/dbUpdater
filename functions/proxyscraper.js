@@ -2,7 +2,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const fs = require('fs')
 const path = require('path')
-var http = require('http');
+var https = require('https');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const AbortController = globalThis.AbortController || require("abort-controller")
 
@@ -28,19 +28,29 @@ function chunkArray(array, size) {
 function testProxy(proxy) {
     return new Promise((resolve, reject) => {
         const [proxyHost, proxyPort] = proxy.split(':');
-        const targetUrl = 'https://cryptorank.io/'; // Replace with your target URL
+        const targetUrl = 'https://cryptorank.io/'; 
+        let req;
+
+        const agent = new HttpsProxyAgent('http://' + proxyHost + ':' + proxyPort);
+
+        const AbortTimeout = setTimeout(() => {
+            req.destroy();
+            resolve({
+                status: false,
+                proxy,
+                error: 'Request timed out'
+            });
+        }, 10000);
+
 
         const requestOptions = {
-            host: proxyHost,
-            port: parseInt(proxyPort, 10),
-            path: targetUrl,
-            timeout: 10000,
             headers: {
                 Host: new URL(targetUrl).hostname
-            }
+            },
+            agent
         };
 
-        const req = http.request(requestOptions, response => {
+        req = https.request(targetUrl, requestOptions, response => {
             let data = '';
 
             response.on('data', chunk => {
@@ -48,8 +58,12 @@ function testProxy(proxy) {
             });
 
             response.on('end', () => {
+                
+                clearTimeout(AbortTimeout);
+                
                 resolve({
-                    status: true,
+                    status: response.statusCode === 200,
+                    proxy,
                     statusCode: response.statusCode,
                     data: data
                 });
@@ -57,11 +71,15 @@ function testProxy(proxy) {
         });
 
         req.on('error', error => {
+            clearTimeout(AbortTimeout);
             resolve({
                 status: false,
+                proxy,
                 error: error.message
             });
         });
+
+        
 
         req.end();
     });
@@ -194,7 +212,7 @@ async function updateProxies(){
     return validProxies
     
 }
-/*
+
 async function test(){
 
     const res = await testProxy('34.165.22.141:3128')
@@ -202,7 +220,7 @@ async function test(){
 }
 
 test()
-*/
+
 module.exports = {
     updateProxies
 }
