@@ -105,7 +105,61 @@ const providers = [
         
 
         return proxyNodes.map(ChildNode => ChildNode.childNodes[0].innerHTML + ':' + ChildNode.childNodes[1].innerHTML).join('\n')
-    }
+    },
+    async () => {
+
+        const URL = 'https://www.freeproxy.world/';
+    
+        const rawResponse = await fetch(URL)
+        const response = await rawResponse.text()
+    
+        const dom = new JSDOM(response);
+    
+    
+        let proxyNodes = Array.from(dom.window.document.getElementsByClassName('show-ip-div'))
+        
+
+        return proxyNodes.map(ChildNode => ChildNode.textContent.trim() + ':' + ChildNode.nextElementSibling.textContent.trim()).join('\n')
+    },
+
+    async () => {
+
+        const URL = 'https://www.proxynova.com/proxy-server-list/';
+    
+        const rawResponse = await fetch(URL)
+        const response = await rawResponse.text()
+    
+        const dom = new JSDOM(response);
+    
+    
+        let proxyNodes = Array.from(dom.window.document.getElementById('tbl_proxy_list').querySelector('tbody').querySelectorAll('tr'))
+        proxyNodes = proxyNodes.map(ChildNode => {
+
+            let ipEval = ChildNode.querySelector('script').textContent.trim().slice(0, -1).slice(15)
+
+            let ip = eval(ipEval)
+            let port = ChildNode.childNodes[3].textContent.trim()
+
+            return ip + ':' + port
+        })
+
+        return proxyNodes.join('\n')
+    },
+    async () => {
+
+        const URL = 'https://freeproxylist.cc/';
+    
+        const rawResponse = await fetch(URL)
+        const response = await rawResponse.text()
+        const dom = new JSDOM(response);
+    
+        
+        let proxyNodes = Array.from(dom.window.document.getElementsByClassName("table")[0].querySelectorAll('tr')).slice(1).slice(0, -1)
+        
+
+        return proxyNodes.map(ChildNode => ChildNode.childNodes[1].textContent.trim() + ':' + ChildNode.childNodes[3].textContent.trim()).join('\n')
+    },
+
 ]
 
 async function updateProxies(){
@@ -120,12 +174,20 @@ async function updateProxies(){
 
     console.log(validProxies.length)
     fs.writeFileSync(path.join(__dirname, '../dumps/proxies.json'), JSON.stringify(validProxies, null, 2))
+    fs.writeFileSync(path.join(__dirname, '../dumps/rawProxies.txt'), validProxies.split('\n'))
 
     return validProxies
     
 }
 
-updateProxies()
+async function test(){
+
+    const res = await providers[5]()
+    console.log(res)
+}
+
+
+test()
 
 module.exports = {
     updateProxies
