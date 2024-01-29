@@ -10,6 +10,12 @@ function isValidIpPort(str) {
     var regex = /^((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]?\d):([0-5]?[0-9]{1,4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/;
     return regex.test(str);
 }
+function uniq(a) {
+    var seen = {};
+    return a.filter(function(item) {
+        return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+    });
+}
 
 function chunkArray(array, size) {
     const chunks = [];
@@ -61,6 +67,7 @@ async function testProxies(proxies) {
         console.log(`Testing ${chunk.length} proxies...`);
         const chunkResults = await Promise.all(chunk.map(testProxy));
         results.push(...chunkResults);
+        console.log(' -> Found ' + chunkResults.filter(result => result.status).length + ' valid proxies');
     }
 
     return results;
@@ -169,12 +176,12 @@ async function updateProxies(){
     
     const proxyList = proxies.split('\n').map(proxy => proxy.trim()).filter(proxy => isValidIpPort(proxy))
 
-    let validProxies = await testProxies(proxyList)
+    let validProxies = await testProxies(uniq(proxyList))
     validProxies = validProxies.filter(proxy => proxy.status).map(Proxy => Proxy.proxy)
 
     console.log(validProxies.length)
     fs.writeFileSync(path.join(__dirname, '../dumps/proxies.json'), JSON.stringify(validProxies, null, 2))
-    fs.writeFileSync(path.join(__dirname, '../dumps/rawProxies.txt'), validProxies.split('\n'))
+    fs.writeFileSync(path.join(__dirname, '../dumps/rawProxies.txt'), validProxies.join('\n'))
 
     return validProxies
     
