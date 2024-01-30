@@ -212,14 +212,14 @@ async function updateProxies(){
     return validProxies
     
 }
-/*
+
 async function test(){
 
     const res = await testProxy('108.61.75.140:8005')
     console.log(res)
 }
-*/
-//test()
+
+test()
 
 module.exports = {
     updateProxies

@@ -7,6 +7,10 @@ const proxyscraper = require('./functions/proxyscraper.js');
 
 let proxies = fs.readFileSync(path.join(__dirname, './dumps/rawProxies.txt'), 'UTF-8').split('\n')
 
+function isValidIpPort(str) {
+    var regex = /^((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]?\d):([0-5]?[0-9]{1,4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/;
+    return regex.test(str);
+}
 
 // Generate a random integer between min (inclusive) and max (inclusive)
 function getRandomInt(min, max) {
@@ -19,7 +23,7 @@ const MINUTES = 10;
 
 async function start() {
 
-    if(proxies.length <= 1)
+    if(!isValidIpPort(proxies[0]))
         proxies = await proxyscraper.updateProxies()
     //await proxyscraper.updateProxies()
     setInterval(async function(){
