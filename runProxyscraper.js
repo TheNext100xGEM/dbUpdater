@@ -2,7 +2,6 @@ const fs = require('fs')
 const path= require('path')
 const net = require('net');
 const http = require('http');
-const { HttpsProxyAgent } = require('https-proxy-agent');
 const proxyscraper = require('./functions/proxyscraper.js');
 
 

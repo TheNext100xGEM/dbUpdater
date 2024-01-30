@@ -40,7 +40,7 @@ function testProxy(proxy) {
                 proxy,
                 error: 'Request timed out'
             });
-        }, 3000); //smaller timeout for higher quality proxies
+        }, 15000);
 
 
         const requestOptions = {
@@ -212,7 +212,7 @@ async function updateProxies(){
     return validProxies
     
 }
-/*
+
 async function test(){
 
     const res = await testProxy('34.165.22.141:8005')
@@ -220,7 +220,7 @@ async function test(){
 }
 
 test()
-*/
+
 module.exports = {
     updateProxies
 }
