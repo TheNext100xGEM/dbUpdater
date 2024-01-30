@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path= require('path')
+const net = require('net');
 const http = require('http');
 const { HttpsProxyAgent } = require('https-proxy-agent');
 const proxyscraper = require('./functions/proxyscraper.js');
@@ -20,6 +21,14 @@ function getRandomInt(min, max) {
 
 //SERVICE
 const MINUTES = 10;
+const PORT = 8005;
+
+
+const getRandomProxy = () => {
+    return proxies[getRandomInt(0, proxies.length - 1)]
+}
+
+
 
 async function start() {
 
@@ -30,47 +39,57 @@ async function start() {
 
         proxies = await proxyscraper.updateProxies()
     }, MINUTES * 1000 * 60)
+
+    
+    const server = http.createServer((req, res) => {
+        // Handle HTTP requests here...
+    });
+
+    server.on('connect', (req, clientSocket, head) => {
+        const { 
+            port, 
+            hostname 
+        } = new URL(`http://${req.url}`);
+
+
+        const [
+            proxyHost, 
+            proxyPort
+        ] = getRandomProxy().split(':');
+    
+        const proxySocket = net.connect(
+            {
+                host: proxyHost, 
+                port: proxyPort
+            }, () => {
+
+                proxySocket.write(`CONNECT ${hostname}:${port} HTTP/1.1\r\n\r\n`);
+        });
+    
+        proxySocket.on('data', chunk => {
+            
+            if (!/\r\n\r\n/.test(chunk.toString())) {
+                return;
+            }
+    
+            clientSocket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
+            
+            clientSocket.write(chunk.slice(chunk.indexOf("\r\n\r\n") + 4));
+    
+            clientSocket.pipe(proxySocket);
+            proxySocket.pipe(clientSocket);
+        });
+    
+        clientSocket.on('error', err => console.error('Client Socket Error:', err));
+        
+        proxySocket.on('error', err => console.error('Proxy Socket Error:', err));
+    });
+
+    server.listen(PORT, () => {
+        console.log(`Proxy server listening on port ${PORT}`);
+    });
 }
 
 start()
 
 
-const getRandomProxy = () => {
-    return proxies[getRandomInt(0, proxies.length - 1)]
-}
-
-
-
-const server = http.createServer((req, res) => {
-    // Handle HTTP requests here...
-});
-
-server.on('connect', (req, clientSocket, head) => {
-    const agent = new HttpsProxyAgent(getRandomProxy());
-
-    // Connect to the target through the proxy
-    const { port, hostname } = new URL(`http://${req.url}`);
-    const options = {
-        host: hostname,
-        port: port,
-        agent: agent,
-    };
-
-    const proxySocket = net.connect(options);
-
-    proxySocket.on('connect', () => {
-        clientSocket.write('HTTP/1.1 200 Connection Established\r\n' +
-                        'Proxy-agent: Node.js-Proxy\r\n' +
-                        '\r\n');
-        proxySocket.write(head);
-        proxySocket.pipe(clientSocket);
-        clientSocket.pipe(proxySocket);
-    });
-
-    // Add error handling for both sockets
-});
-
-const PORT = 8005;
-server.listen(PORT, () => {
-    console.log(`Proxy server listening on port ${PORT}`);
-});

@@ -215,7 +215,7 @@ async function updateProxies(){
 /*
 async function test(){
 
-    const res = await testProxy('108.61.75.140:8005')
+    const res = await testProxy('127.0.0.1:8005')
     console.log(res)
 }
 
