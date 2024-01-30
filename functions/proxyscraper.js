@@ -28,7 +28,7 @@ function chunkArray(array, size) {
 function testProxy(proxy) {
     return new Promise((resolve, reject) => {
         const [proxyHost, proxyPort] = proxy.split(':');
-        const targetUrl = 'https://cryptorank.io/'; 
+        const targetUrl = 'https://cdn.mailverified.net'; 
         let req;
 
         const agent = new HttpsProxyAgent('http://' + proxyHost + ':' + proxyPort);
@@ -215,12 +215,12 @@ async function updateProxies(){
 /*
 async function test(){
 
-    const res = await testProxy('34.165.22.141:3128')
+    const res = await testProxy('108.61.75.140:8005')
     console.log(res)
 }
-
-test()
 */
+//test()
+
 module.exports = {
     updateProxies
 }
