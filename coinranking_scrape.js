@@ -1,5 +1,7 @@
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+require('dotenv').config();
+
+const requests = require('./lib/proxyreq.js')
+
 
 /*
 const extractURL = (html) => {
@@ -36,8 +38,16 @@ const ChainStandards = {
 
 
 const getCoinInfo = async (tokenName) => {
-    const rawResponse = await fetch('https://api.cryptorank.io/v0/coins/'+tokenName)
-    const response = await rawResponse.json()
+    const rawResponse = await requests.getJSON('https://api.cryptorank.io/v0/coins/'+tokenName)
+
+    if(!rawResponse.status){
+        return {
+            status: false,
+            message: "Error fetching coin info"
+        }
+    }
+
+    const response = JSON.parse(rawResponse.data)
 
     if(!response.data)
         return {

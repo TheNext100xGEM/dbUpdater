@@ -4,7 +4,6 @@ const fs = require('fs')
 const path = require('path')
 var https = require('https');
 const { HttpsProxyAgent } = require('https-proxy-agent');
-const AbortController = globalThis.AbortController || require("abort-controller")
 
 function isValidIpPort(str) {
     var regex = /^((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]?\d):([0-5]?[0-9]{1,4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5])$/;
