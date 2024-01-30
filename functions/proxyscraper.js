@@ -28,7 +28,7 @@ function chunkArray(array, size) {
 function testProxy(proxy) {
     return new Promise((resolve, reject) => {
         const [proxyHost, proxyPort] = proxy.split(':');
-        const targetUrl = 'https://cdn.mailverified.net'; 
+        const targetUrl = 'https://cryptorank.io'; 
         let req;
 
         const agent = new HttpsProxyAgent('http://' + proxyHost + ':' + proxyPort);
@@ -40,7 +40,7 @@ function testProxy(proxy) {
                 proxy,
                 error: 'Request timed out'
             });
-        }, 10000);
+        }, 3000); //smaller timeout for higher quality proxies
 
 
         const requestOptions = {
@@ -215,7 +215,7 @@ async function updateProxies(){
 /*
 async function test(){
 
-    const res = await testProxy('127.0.0.1:8005')
+    const res = await testProxy('34.165.22.141:8005')
     console.log(res)
 }
 
