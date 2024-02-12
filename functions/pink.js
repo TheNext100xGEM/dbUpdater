@@ -1,6 +1,9 @@
 require('dotenv').config({ path: '.env.local'})
 const db = require('./db')
 const general = require('./general')
+const fs = require('fs')
+const path = require('path')
+
 
 const pink = {
     banned: [ // sales I noticed that shouldn't be returned by the api but still are
@@ -86,15 +89,15 @@ const pink = {
             let kycDetails = a.pool.kycDetails == "" ? undefined : JSON.parse(a.pool.kycDetails)
     
             let sale = {
-            uniqueKey: a.poolAddress,
-            presaleAddress: a.poolAddress,
+            uniqueKey: a.pool.address,
+            presaleAddress: a.pool.address,
             tokenName: a.token.name,
             tokenSymbol: a.token.symbol,
             baseSymbol: a.currency.symbol,
             saleToken: a.token.address,
-            audit: a.pool.hasAudit,
+            audit: kycDetails?.b?.length > 0,
             auditLink: kycDetails?.b || undefined,
-            kyc: a.pool.hasKyc,
+            kyc: !!a.pool.kycDetails,
             safu: a.pool.hasSafu,
             softCap: a.pool.formattedSoftCap,
             hardCap: a.pool.formattedHardCap,
@@ -127,15 +130,14 @@ const pink = {
     },
     getNonClosed: async () => { // returns formatted non-closed sales from pink api
         try {
-            let response = await fetch(process.env.PINK_API)
-            let answer = await response.json() // {data:[...], currentIndexes:[...], updatedAt: timeString}
+            //let response = await fetch(process.env.PINK_API)
+            //await response.json() // {data:[...], currentIndexes:[...], updatedAt: timeString}
+            let answer = JSON.parse(fs.readFileSync(path.join(__dirname, '../dumps/DBDUMP_pinksale.json'), 'UTF-8'))
             let sales = []
 
-            for (let i = 0; i < await answer.data.length; i++) {
-                if (pink.chains.includes(answer.data[i].chainId) &&
-                !pink.banned.includes(answer.data[i].poolAddress) &&
-                answer.data[i].pool.state < 1) {
-                    let formattedSale = pink.formatSale(answer.data[i])
+            for (let i = 0; i < await answer.docs.length; i++) {
+                if (true) {
+                    let formattedSale = pink.formatSale(answer.docs[i])
                     sales.push(formattedSale)
                 }
             }
@@ -177,12 +179,13 @@ const pink = {
     },
     checkNew: async () => {
         try {
+
             const alreadyIncluded = await db.getAllMinBySource('pinksale')
             const nonClosedFromPinkApi = await pink.getNonClosed()
             
             const toInclude = nonClosedFromPinkApi.filter(item => !alreadyIncluded.includes(item.presaleAddress) && item.audit && item.kyc)
             const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
-            console.log(toIncludeWithAnalyzedFalse, toIncludeWithAnalyzedFalse.length)
+
             if (toIncludeWithAnalyzedFalse.length > 0) {
                 await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
             }
