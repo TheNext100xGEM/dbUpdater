@@ -18,6 +18,8 @@
     "https-proxy-agent": "^7.0.2",
     "jsdom": "^24.0.0",
     "mongodb": "^6.3.0",
+    "mongoose": "^8.1.2",
+    "mongoose-paginate-v2": "^1.8.0",
     "node-fetch": "^2.6.6",
     "web3": "^4.4.0"
   }
