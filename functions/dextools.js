@@ -4,6 +4,8 @@ const general = require('./general')
 const fs = require('fs')
 const path = require('path')
 
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+
 
 const dextools = {
 
@@ -17,8 +19,9 @@ const dextools = {
 
     formatSale: async (tokenAddress) => { // returns formatted version of sale
         try {
-            
+            await sleep(1000)
             let auditInfo = await dextools.makeAuthedCall(`/token/ether/${tokenAddress}/audit`)
+            await sleep(1000)
             let allInfo = await dextools.makeAuthedCall(`/token/ether/${tokenAddress}`)
             
             allInfo = await allInfo.json()
@@ -81,6 +84,8 @@ const dextools = {
                 if(newProject){
                     sales.push(await dextools.formatSale(answer.data[i].mainToken.address))
                 }
+                await sleep(1000)
+
             }
 
             return sales.filter(item => item !== undefined)
