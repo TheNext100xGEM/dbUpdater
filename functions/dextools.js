@@ -36,7 +36,7 @@ const dextools = {
                 audit: false,
                 auditLink: 'not provided',
                 kyc: false,
-                safu: auditInfo?.data?.isContractRenounced === 'yes' && auditInfo?.data?.isPotentiallyScam === 'no',
+                safu: auditInfo?.data?.isPotentiallyScam !== 'yes',
                 softCap: null,
                 hardCap: null,
                 amountRaised: null,
@@ -102,10 +102,11 @@ const dextools = {
 
             const alreadyIncluded = await db.getAllMinBySource('dextools')
             const nonClosedFromDextoolsApi = await dextools.getNonClosed()
-            
             const toInclude = nonClosedFromDextoolsApi.filter(item => !alreadyIncluded.includes(item.uniqueKey) && item.safu)
             const toIncludeWithAnalyzedFalse = toInclude.map(item => ({...item, 'analyzed': false}))
-
+            
+            console.log('all: ', nonClosedFromDextoolsApi.length)
+            console.log('toInclude: ', toInclude.length)
             if (toIncludeWithAnalyzedFalse.length > 0) {
                 await db.createListings(process.env.DB_COLL, toIncludeWithAnalyzedFalse)
             }
