@@ -11,9 +11,11 @@ const updateTrending = async (db) => {
     } = db;
 
     try {
-        await Project.updateMany({"isTrending": true}, {$set :{"isTrending": false}});
         
         let persistedTrending = await dextools.getNewTrending()
+
+        await Project.updateMany({"isTrending": true}, {$set :{"isTrending": false}});
+
         persistedTrending = persistedTrending.map(item => item.uniqueKey )
 
         await Project.updateMany({uniqueKey: {$in: persistedTrending}}, {$set :{"isTrending": true}});
