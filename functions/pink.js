@@ -87,7 +87,13 @@ const pink = {
         try {
             let details = JSON.parse(a.pool.poolDetails)
             let kycDetails = a.pool.kycDetails == "" ? undefined : JSON.parse(a.pool.kycDetails)
-    
+            
+            //Format softcap, hardcap, total raised
+            a.pool.formattedSoftCap = general.formatNumber(a.pool.softCap, a.currency.decimals)
+            a.pool.formattedHardCap = general.formatNumber(a.pool.hardCap, a.currency.decimals)
+            a.pool.formattedTotalRaised = general.formatNumber(a.pool.totalRaised, a.currency.decimals)
+            
+
             let sale = {
             uniqueKey: a.pool.address,
             presaleAddress: a.pool.address,

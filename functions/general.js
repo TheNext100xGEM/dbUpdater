@@ -5,6 +5,9 @@ const general = {
             return obj
         }, {})
     },
+    formatNumber: (number, decimals) => {
+        return parseFloat((number / Math.pow(10, decimals)).toFixed(decimals))
+    }
 }
 
 module.exports = general

@@ -1,0 +1,18 @@
+RUN THESE COMMANDS AFTER RUNNING RUNPINKSALE.JS
+
+db.projects.deleteMany({
+    baseSymbol: "ETH",
+    launchpad: "pinksale",
+    amountRaised: { $lt: 16 }
+});
+
+db.projects.deleteMany({
+    baseSymbol: "BNB",
+    launchpad: "pinksale",
+    amountRaised: { $lt: 140.65 }
+});
+
+db.projects.deleteMany({
+         launchpad: "pinksale",
+    baseSymbol: { $nin: ["BNB", "ETH"] }
+});
