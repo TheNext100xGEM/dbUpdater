@@ -30,7 +30,8 @@ const dbdump = {
         const totalDocuments = data.metadata.total_entries;
         await downloadJson(`https://polkastarter.com/v3/projects?search=&page=1&per_page=${totalDocuments}`, path.join(__dirname, '../dumps/DBDUMP_polkastarter.json'))
         return totalDocuments;
-    }
+    },
+    
 
 }
 
