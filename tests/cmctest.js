@@ -23,7 +23,7 @@ const getCoinInfo = async (coin) => {
 const getAllCoins = async () => {
 
     const CHUNK_SIZE = 5;
-    const LIMIT = 50;
+    const LIMIT = 500;
 
     let coins = await fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/map', CMC_HEADERS)
     coins = await coins.json()
