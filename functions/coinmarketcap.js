@@ -29,7 +29,7 @@ const coinmarketcap = {
         const getAllCoins = async () => {
 
             const CHUNK_SIZE = 5;
-            const LIMIT = 5;
+            const LIMIT = 500;
 
             let coins = await fetch(process.env.CMC_API+'/v1/cryptocurrency/map', CMC_HEADERS)
 
