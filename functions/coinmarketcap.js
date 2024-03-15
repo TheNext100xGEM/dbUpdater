@@ -93,7 +93,7 @@ const coinmarketcap = {
             createdAt: new Date(coin.first_historical_data),
             poolType: 'FL',
             blockchain_area: coin.platform?.name ?? coin.name,
-            chains: (coin.contract_address[0] ? coin.contract_address : [coin.name]).map(e => e.platform?.name ?? e),
+            chains: (coin.contract_address?.[0] ? coin.contract_address : [coin.name]).map(e => e.platform?.name ?? e),
             status: 2,
             telegramMemberCount: null,
             telegramOnlineCount: null,
