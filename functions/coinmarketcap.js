@@ -65,7 +65,7 @@ const coinmarketcap = {
     formatSale: (coin) => { // returns formatted version of sale
 
         if(!coin.name) { return null }
-
+        if(coin.urls?.website?.[0]) { return null }
         return {
             uniqueKey: coin.contract_address?.[0]?.contract_address ?? (coin.symbol + '-' + 'cmc'),
             presaleAddress: 'none',
