@@ -64,6 +64,8 @@ const coinmarketcap = {
 
     formatSale: (coin) => { // returns formatted version of sale
 
+        if(!coin.name) { return null }
+
         return {
             uniqueKey: coin.contract_address?.[0]?.contract_address ?? (coin.symbol + '-' + 'cmc'),
             presaleAddress: 'none',
@@ -104,7 +106,7 @@ const coinmarketcap = {
     getNonClosed: async () => { // returns formatted non-closed sales from coinmarketcap api
         try {
             
-            return (await coinmarketcap.getAllCoins()).map(coinmarketcap.formatSale)
+            return (await coinmarketcap.getAllCoins()).map(coinmarketcap.formatSale).filter(e => e)
         } catch (e) {
             console.log(e)
         }
